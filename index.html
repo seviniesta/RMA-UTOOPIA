@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+   
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    header {
+      background-color: #3498db;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+  #contenedor_calendario{
+    overflow-x: auto; /* Para permitir desplazamiento horizontal en pantallas pequeñas */
+    width: 100%;
+    max-width: 100%; /* Opcional: Puedes establecer un ancho máximo si lo deseas */
+    box-sizing: border-box; /* Ajusta el modelo de caja para incluir el relleno y el borde en el ancho total */
+  }
+
+    .container {
+      display: flex;
+      flex-wrap: nowrap; /* Para evitar saltos de carro */
+      
+    }
+
+    .titulo,
+    .day {
+      background-color: #ecf0f1;
+      border: 1px solid #bdc3c7;
+      box-sizing: border-box;
+      padding: 1px;
+      text-align: center;
+      font-size: 1.2vw; /* Ajustar el tamaño de la fuente responsivamente */
+    }
+
+    .titulo {
+      flex: 0 0 10%; /* Ancho fijo del 10% para el div de la cabecera */
+    }
+
+    .day {
+      flex: 1 0 calc(90% / var(--diviciones)); /* Calcula el ancho para cada día */
+    }
+
+    @media screen and (max-width: 300px) {
+      /* Ajustar tamaños para pantallas más pequeñas si es necesario */
+      .titulo, .day {
+        flex: 0 0 100%; /* Ancho del 100% en pantallas pequeñas */
+        font-size: 3vw; /* Ajustar el tamaño de la fuente para pantallas más pequeñas */
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h>Calendario Responsive</h>
+</header>
+<div id="contenedor_calendario"> 
+
+
+
+
+<!-- Divs horizontales generados con JavaScript -->
+
+
+</div>
+
+<script>
+
+  function obtenerDiaSemana(dia, mes, ano) {
+      // El mes en JavaScript va de 0 a 11, donde 0 es enero y 11 es diciembre
+      // Así que resta 1 al mes proporcionado por el usuario
+     // mes--;
+
+      // Crea un objeto de fecha con la fecha proporcionada
+      let fecha = new Date(ano, mes, dia);
+
+      // Obtiene el número del día de la semana (0 para domingo, 1 para lunes, ..., 6 para sábado)
+      let numeroDiaSemana = fecha.getDay();
+
+      // Array con los nombres de los días de la semana
+      let nombresDias = ["D", "L", "M", "X", "J", "V", "S"];
+
+      // Retorna el nombre del día de la semana
+   
+      return nombresDias[numeroDiaSemana];
+  }
+  
+  
+  
+  
+  
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    function add_line(titulo,ano,mes) {
+
+// Fecha =>Genero los dias que hay en el mes
+      mes--;
+      // Crea un objeto de fecha para el primer día del siguiente mes
+      let fechaSiguienteMes = new Date(ano, mes + 1, 1);
+
+      // Resta un día para obtener el último día del mes actual
+      let ultimoDiaDelMes = new Date(fechaSiguienteMes - 1);
+
+      // Obtiene el día del mes
+     //ultimoDiaDelMes.getDate();
+      
+      
+
+      var contenedorPrincipal=document.getElementById("contenedor_calendario");
+      
+      var container = document.createElement('div');
+      container.className = 'container';
+
+    //  var bod = document.body;
+      if (!contenedorPrincipal) {
+        console.error("No se encontró el elemento 'body'");
+        return;
+      }
+
+        contenedorPrincipal.appendChild(container);
+
+      var diviciones =ultimoDiaDelMes.getDate(); // calcula numero de dias 
+      var descripcion = document.createElement('div');
+      descripcion.className = 'titulo';
+      descripcion.textContent = titulo;
+      container.appendChild(descripcion);
+
+      container.style.setProperty('--diviciones', diviciones);
+
+
+      for (var i = 1; i <= diviciones; i++) {
+        var dayDiv = document.createElement('div');
+        dayDiv.className = 'day';
+        //dayDiv.textContent = i;
+        dayDiv.innerHTML ='<p style="padding:0; margin:0;"><b>'+obtenerDiaSemana(i, mes, ano)+'</b></p><p style="padding:0; margin:0; " >'+i+'</p>';
+        container.appendChild(dayDiv);
+    
+      }
+ 
+      
+    }
+
+    add_line('Dia',2024,3);
+   // add_line('visita');
+  
+  });
+</script>
+
+</body>
+</html>
