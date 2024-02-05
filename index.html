@@ -39,10 +39,17 @@
       padding: 1px;
       text-align: center;
       font-size: 1.2vw; /* Ajustar el tamaño de la fuente responsivamente */
+     
     }
 
     .titulo {
       flex: 0 0 10%; /* Ancho fijo del 10% para el div de la cabecera */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size:1vw; ;
+     
     }
 
     .day {
@@ -53,15 +60,25 @@
       /* Ajustar tamaños para pantallas más pequeñas si es necesario */
       .titulo, .day {
         flex: 0 0 100%; /* Ancho del 100% en pantallas pequeñas */
-        font-size: 3vw; /* Ajustar el tamaño de la fuente para pantallas más pequeñas */
+        font-size: 1vw; /* Ajustar el tamaño de la fuente para pantallas más pequeñas */
       }
     }
+
+
+
+ 
+#Pagos_8_1_2024,#Pagos_20_1_2024,#Casa_28_1_2024 { background-color: red;  } 
+    
+    #Casa_28_1_2024 { background-color: rgb(25, 177, 169);  }
+    #Po_Guill_28_1_2024{background-color: pink;} 
+
+    
   </style>
 </head>
 <body>
 
 <header>
-  <h>Calendario Responsive</h>
+  <h2 id="TituloAno">Calendario Responsive</h2>
 </header>
 <div id="contenedor_calendario"> 
 
@@ -100,6 +117,14 @@
   document.addEventListener('DOMContentLoaded', function () {
     function add_line(titulo,ano,mes) {
 
+      let i;
+      let contenido_cal;
+
+      
+
+
+
+
 // Fecha =>Genero los dias que hay en el mes
       mes--;
       // Crea un objeto de fecha para el primer día del siguiente mes
@@ -113,9 +138,14 @@
       
       
 
-      var contenedorPrincipal=document.getElementById("contenedor_calendario");
+      let contenedorPrincipal=document.getElementById("contenedor_calendario");
+
+
+      let TituloAno=document.getElementById("TituloAno"); //Pone el año en el id TituloAno.
+      TituloAno.innerHTML=ano;
+      let meses=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
       
-      var container = document.createElement('div');
+      let container = document.createElement('div');
       container.className = 'container';
 
     //  var bod = document.body;
@@ -126,8 +156,8 @@
 
         contenedorPrincipal.appendChild(container);
 
-      var diviciones =ultimoDiaDelMes.getDate(); // calcula numero de dias 
-      var descripcion = document.createElement('div');
+      let diviciones =ultimoDiaDelMes.getDate(); // calcula numero de dias 
+      let descripcion = document.createElement('div');
       descripcion.className = 'titulo';
       descripcion.textContent = titulo;
       container.appendChild(descripcion);
@@ -135,19 +165,60 @@
       container.style.setProperty('--diviciones', diviciones);
 
 
-      for (var i = 1; i <= diviciones; i++) {
-        var dayDiv = document.createElement('div');
+      for ( i = 1; i <= diviciones; i++) {
+       
+        if(titulo===ano){
+          
+          contenido_cal='<p id="cal_'+i+'_'+mes+'_'+ano+'" style="padding:0; margin:0;"><b>'+obtenerDiaSemana(i, mes, ano)+'</b></p><p style="padding:0; margin:0; " >'+i+'</p>';
+          descripcion.textContent =meses[mes];
+          document.getElementsByClassName('titulo')[0].style.backgroundColor="black";
+          document.getElementsByClassName('titulo')[0].style.color="white";
+           
+       }else{ contenido_cal='<p  style="padding:0; margin:0;"  id="'+titulo+'_'+i+'_'+mes+'_'+ano+'"  >&nbsp;</p>'}
+      
+
+        
+        let dayDiv = document.createElement('div');
         dayDiv.className = 'day';
         //dayDiv.textContent = i;
-        dayDiv.innerHTML ='<p style="padding:0; margin:0;"><b>'+obtenerDiaSemana(i, mes, ano)+'</b></p><p style="padding:0; margin:0; " >'+i+'</p>';
+        dayDiv.innerHTML =contenido_cal;
         container.appendChild(dayDiv);
     
       }
-       
+      
+
+      //======================= Saca  el Día , mes y año actual y remarca el css el div para saber en que día estamos.
+      
+const fechaActual = new Date();
+const diaActual = fechaActual.getDate();
+const mesActual = fechaActual.getMonth() + 1;  // Se suma 1 porque los meses en JavaScript van de 0 a 11
+const anoActual = fechaActual.getFullYear();
+
+const idElemento = 'cal_'+ diaActual+'_'+(mesActual-1)+'_'+ anoActual;
+const elemento = document.getElementById(idElemento);
+
+
+if (elemento) {
+  // El elemento con el ID especificado existe
+  elemento.style.backgroundColor = "black";
+  elemento.style.color = "white";
+// MArca el siguiente parrafo en Negro
+  elemento.nextElementSibling.style.backgroundColor = "black";
+  elemento.nextElementSibling.style.color = "white";
+
+
+} else {
+  // El elemento con el ID especificado no existe
+  console.error("El elemento con ID '" + idElemento + "' no fue encontrado.");
+}
+
     }
 
-    add_line('Dia',2024,2);
-   // add_line('visita');
+    add_line(2024,2024,2);
+   add_line('Pagos',2024,2);
+    add_line('Casa',2024,2);
+    add_line('Po_Guill',2024,2);
+ 
   
   });
 </script>
