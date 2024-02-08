@@ -1,28 +1,32 @@
+function obtenerDiaSemana(dia, mes, ano) {
+    let fecha = new Date(ano, mes, dia);
+    let numeroDiaSemana = fecha.getDay();
+    let nombresDias = ["D", "L", "M", "X", "J", "V", "S"];
+    return nombresDias[numeroDiaSemana];
+  }
+
+  function marcarDiaActual() {
+    const fechaActual = new Date();
+    const diaActual = fechaActual.getDate();
+    const mesActual = fechaActual.getMonth() + 1;
+    const anoActual = fechaActual.getFullYear();
+    const idElemento = `cal_${diaActual}_${mesActual - 1}_${anoActual}`;
+    const elemento = document.getElementById(idElemento);
+
+    if (elemento) {
+      elemento.style.backgroundColor = "black";
+      elemento.style.color = "white";
+      elemento.nextElementSibling.style.backgroundColor = "black";
+      elemento.nextElementSibling.style.color = "white";
+    } else {
+      console.error(`El elemento con ID '${idElemento}' no fue encontrado.`);
+    }
+  }
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
-    function obtenerDiaSemana(dia, mes, ano) {
-      let fecha = new Date(ano, mes, dia);
-      let numeroDiaSemana = fecha.getDay();
-      let nombresDias = ["D", "L", "M", "X", "J", "V", "S"];
-      return nombresDias[numeroDiaSemana];
-    }
-  
-    function marcarDiaActual() {
-      const fechaActual = new Date();
-      const diaActual = fechaActual.getDate();
-      const mesActual = fechaActual.getMonth() + 1;
-      const anoActual = fechaActual.getFullYear();
-      const idElemento = `cal_${diaActual}_${mesActual - 1}_${anoActual}`;
-      const elemento = document.getElementById(idElemento);
-  
-      if (elemento) {
-        elemento.style.backgroundColor = "black";
-        elemento.style.color = "white";
-        elemento.nextElementSibling.style.backgroundColor = "black";
-        elemento.nextElementSibling.style.color = "white";
-      } else {
-        console.error(`El elemento con ID '${idElemento}' no fue encontrado.`);
-      }
-    }
+
   
     function add_line(titulo, ano, mes) {
       mes--;
@@ -80,3 +84,21 @@ document.addEventListener('DOMContentLoaded', function () {
     add_line('Po_Guill', 2024, 2);
   });
   
+
+
+  //document.addEventListener('click',function(event){ alert(event.target.id);})
+
+
+
+  //========================== VENTANA EMERGENTE
+
+  var miVentana = document.getElementById("miVentana");
+var miDiv = document.getElementById("miDiv");
+
+miDiv.onclick = function() {
+  miVentana.style.display = "block";
+}
+
+function cerrarVentana() {
+  miVentana.style.display = "none";
+}

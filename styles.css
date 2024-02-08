@@ -54,18 +54,81 @@ body {
   }
   
 
-  /* EJEMPLOS
+
+
+
+
+  /*============================= EJEMPLOS =======================================  */
+
+  #Pagos_15_1_2024,
   #Pagos_8_1_2024,
   #Pagos_20_1_2024,
+  #Po_Guill_28_1_2024,
   #Casa_28_1_2024 {
     background-color: red;
+    background-size: contain; /* La imagen se ajustará al div sin salirse */
+    background-position: center; /* Opcional: posición de la imagen en el div */
+    background-repeat: no-repeat; /* Opcional: evita que la imagen se repita si el div es más grande que la imagen */
   }
   
   #Casa_28_1_2024 {
-    background-color: rgb(25, 177, 169);
+    background-color:white;
+    background-image: url('https://cdn-icons-png.flaticon.com/128/115/115902.png');
   }
   
   #Po_Guill_28_1_2024 {
-    background-color: pink;
+    background-color:white;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlM1v-YYeXGM4CL4r-JdkTkmnYoGoMtjsn8PrvP3IDti1MnsQqOIx3R57vbGnz0VTpRjI&usqp=CAU'); /* Ruta de la imagen SVG */
+    
   }
-  */
+
+  
+  #Pagos_15_1_2024 {
+    background-color:white;
+         
+    background-image:url('https://cdn-icons-png.flaticon.com/128/2769/2769402.png');}
+  
+
+
+/*============================= FIN EJEMPLOS =======================================  */
+
+
+/*============================= VENTANA EMERGENTE =======================================  */
+
+    .contenedor {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+    }
+    
+    .ventana {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 4px;
+      z-index: 9999;
+      opacity: 0.9;
+    }
+    
+    .contenido {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    .cerrar {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+    
+
+    /*============================= FIN  VENTANA EMERGENTE =======================================  */
