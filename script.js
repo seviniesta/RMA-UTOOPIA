@@ -86,19 +86,69 @@ document.addEventListener('DOMContentLoaded', function () {
   
 
 
-  //document.addEventListener('click',function(event){ alert(event.target.id);})
+  document.addEventListener('click',function(event){ 
+    
+    //alert(event.target.id);
+
+    const mouseX = event.clientX+3;
+    const mouseY = event.clientY;
+    
+    // Mostrar la posición en la consola
+    //console.log('Posición del ratón - X:', mouseX, ' Y:', mouseY);
+
+  
+    openPopup(event.target.id,(mouseX+28), (mouseY+95));
+
+
+
+  
+  })
 
 
 
   //========================== VENTANA EMERGENTE
 
-  var miVentana = document.getElementById("miVentana");
-var miDiv = document.getElementById("miDiv");
+  function openPopup(contenido,posición_izquierda, posicion_top) {
+    // Abrir una ventana emergente con algunas dimensiones
+    var popup = window.open('', 'popup', 'width=300,height=300,left='+posición_izquierda+',top='+posicion_top+',toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
 
-miDiv.onclick = function() {
-  miVentana.style.display = "block";
-}
+    // Escribir algo dentro de la ventana emergente
+    popup.document.write(
+     ` <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ventana Emergente con Estilos</title>
+<style>
+body{background-color:aqua;}
+</style>
+</head>
+<body>
+<h1>${contenido}</h1>
+</body>
+</html>`
+      
+      
+     );
+    
+    // Agregar un evento para permitir arrastrar la ventana emergente
+    var isDragging = false;
+    var offsetX, offsetY;
 
-function cerrarVentana() {
-  miVentana.style.display = "none";
-}
+    popup.document.body.addEventListener('mousedown', function(event) {
+        isDragging = true;
+        offsetX = event.clientX - popup.screenLeft;
+        offsetY = event.clientY - popup.screenTop;
+    });
+
+    popup.document.body.addEventListener('mouseup', function() {
+        isDragging = false;
+    });
+
+    popup.document.body.addEventListener('mousemove', function(event) {
+        if (isDragging) {
+            popup.moveTo(event.clientX - offsetX, event.clientY - offsetY);
+        }
+    });
+} //funtion
