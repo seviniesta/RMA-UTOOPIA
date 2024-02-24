@@ -15,6 +15,7 @@ def home():
     cliente=db['clientes']
     devuelve_todos_los_Clientes=cliente.find()
   
+  
 
     return render_template('index.html',cliente=devuelve_todos_los_Clientes)
 
@@ -30,8 +31,8 @@ def addClientes():
     rol=request.form['rol']
 
     if nombre and contacto and rol:
-        Clientes=Clientes(nombre,contacto,rol)
-        cliente.insert_one(Clientes.toDBcollection())
+        nuevo_cliente = Clientes(nombre, contacto, rol)  
+        cliente.insert_one(nuevo_cliente.toDBcollection())
         response=jsonify({
                             'nombre':nombre,
                             'contacto':contacto,
@@ -86,4 +87,4 @@ def notFound(error=None):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4000)
+     app.run(debug=True, host='0.0.0.0', port=4000)
