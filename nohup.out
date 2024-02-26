@@ -38,3 +38,56 @@ Press CTRL+C to quit
 10.242.173.190 - - [25/Feb/2024 18:55:11] "POST /editar/SeviIniesta HTTP/1.1" 302 -
 10.242.173.190 - - [25/Feb/2024 18:55:12] "GET / HTTP/1.1" 200 -
 10.242.173.190 - - [25/Feb/2024 18:55:14] "GET / HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/PROYECTOS/RMA-UTOOPIA/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 128-408-543
+10.242.173.190 - - [25/Feb/2024 19:12:50] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [25/Feb/2024 19:12:51] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [25/Feb/2024 19:12:52] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [25/Feb/2024 19:12:53] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [25/Feb/2024 19:12:54] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [25/Feb/2024 19:12:54] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [25/Feb/2024 19:12:54] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [25/Feb/2024 19:12:54] "GET / HTTP/1.1" 200 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://192.168.1.2:4000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 489-340-904
+10.242.173.190 - - [25/Feb/2024 20:31:59] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [25/Feb/2024 20:31:59] "GET /favicon.ico HTTP/1.1" 404 -
+10.242.173.190 - - [25/Feb/2024 20:31:59] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:35:46] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:35:46] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:35:46] "GET /favicon.ico HTTP/1.1" 404 -
+10.242.173.190 - - [26/Feb/2024 05:36:02] "POST /clientes HTTP/1.1" 302 -
+10.242.173.190 - - [26/Feb/2024 05:36:02] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:36:03] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:36:57] "PUT /editar/otra HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:36:57] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:37:34] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:37:38] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:37:52] "DELETE /delete/otra HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:37:52] "PUT /editar/otra HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:37:53] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:37:54] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:38:41] "DELETE /delete/hol HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:38:41] "PUT /editar/hol HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:38:41] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:38:42] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:39:13] "DELETE /delete/vamos HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:39:13] "PUT /editar/vamos HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:39:13] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:39:13] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:39:18] "DELETE /delete/vamos HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:39:18] "PUT /editar/vamos HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:39:18] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:39:19] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:39:38] "PUT /editar/vamos HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:39:38] "GET /clientes HTTP/1.1" 200 -
