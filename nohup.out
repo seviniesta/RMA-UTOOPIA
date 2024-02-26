@@ -91,3 +91,30 @@ Press CTRL+C to quit
 10.242.173.190 - - [26/Feb/2024 05:39:19] "GET /clientes HTTP/1.1" 200 -
 10.242.173.190 - - [26/Feb/2024 05:39:38] "PUT /editar/vamos HTTP/1.1" 200 -
 10.242.173.190 - - [26/Feb/2024 05:39:38] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:44:49] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:44:50] "GET /clientes HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:44:51] "GET / HTTP/1.1" 200 -
+10.242.173.190 - - [26/Feb/2024 05:44:51] "GET /clientes HTTP/1.1" 200 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://192.168.1.2:4000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 576-006-310
+10.242.6.34 - - [26/Feb/2024 15:10:09] "GET /favicon.ico HTTP/1.1" 404 -
+10.242.6.34 - - [26/Feb/2024 15:10:09] "GET /clientes HTTP/1.1" 200 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://192.168.1.2:4000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 258-520-328
+ * Detected change in '/var/www/html/PROYECTOS/RMA-UTOOPIA/app.py', reloading

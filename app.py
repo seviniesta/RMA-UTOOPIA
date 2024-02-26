@@ -67,6 +67,21 @@ def editar(nombre_cliente):
         return notFound()
 
 
+# Método GET para obtener un cliente por nombre
+@app.route('/cliente/<string:nombre_cliente>', methods=['GET'])
+def getCliente(nombre_cliente):
+    cliente = db['clientes']
+    cliente_buscar = cliente.find_one({'nombre': nombre_cliente})
+    if cliente_buscar:
+        return jsonify({
+            'nombre': cliente_buscar['nombre'],
+            'contacto': cliente_buscar['contacto'],
+            'rol': cliente_buscar['rol']
+        })
+    else:
+        return jsonify({'message': 'Cliente no encontrado'}), 404
+
+
 @app.errorhandler(404)
 def notFound(error=None):
     message = {

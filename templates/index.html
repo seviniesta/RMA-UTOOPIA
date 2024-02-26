@@ -71,8 +71,8 @@
                             <input type="text" class="form-control" value="${cliente.contacto}" name="contacto">
                             <small>Rol</small>
                             <input type="text" class="form-control" value="${cliente.rol}" name="rol">
-                            <button class="btn btn-primary btn-sm editar-btn" type="submit">Editar</button>
-                            <button class="btn btn-danger btn-sm eliminar-btn" data-nombre="${cliente.nombre}">Eliminar</button>
+                            <button class="btn btn-primary btn-sm" type="submit">Editar</button>
+                            <button class="btn btn-danger btn-sm btnEliminar" data-nombre="${cliente.nombre}">Eliminar</button>
                         </form>
                     `;
                     listaClientes.appendChild(li);
@@ -105,7 +105,7 @@
             }
         });
 
-        // Escuchar los clics en los botones de editar
+        // Escuchar los formularios de edición
         listaClientes.addEventListener('submit', async function (event) {
             event.preventDefault();
             if (event.target.classList.contains('formEditar')) {
@@ -113,7 +113,7 @@
                 const nombreCliente = event.target.getAttribute('data-nombre');
                 try {
                     const response = await fetch(`/editar/${nombreCliente}`, {
-                        method: 'PUT', // Cambiado a PUT
+                        method: 'PUT',
                         body: formData
                     });
                     if (response.ok) {
@@ -127,9 +127,9 @@
             }
         });
 
-        // Escuchar los clics en los botones de eliminar
+        // Escuchar los botones de eliminación
         listaClientes.addEventListener('click', async function (event) {
-            if (event.target.classList.contains('eliminar-btn')) {
+            if (event.target.classList.contains('btnEliminar')) {
                 const nombreCliente = event.target.getAttribute('data-nombre');
                 try {
                     const response = await fetch(`/delete/${nombreCliente}`, {
