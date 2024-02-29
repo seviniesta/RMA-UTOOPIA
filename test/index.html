@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style></style>
+    <title>Interface Utopiahome</title>
+</head>
+<body>
+    <div class="d-flex justify-content-center p-3">
+        <button class="btn btn-primary" id="bnt_add_miembro">Añadir Miembro</button>
+    </div>
+     
+    <div class="container-fluid" id="contenedor_master"></div>
+    
+    <script>
+        let add_elementos = (id_elemento_padre, crea_elemento_html, tipo_elemento_html, id_nuevo_elemento, clases_nuevo_elemento, contenido_nuevo_elemento) => {    
+            const elemento_padre = document.getElementById(id_elemento_padre);
+            const nuevoElemento = document.createElement(crea_elemento_html);
+            nuevoElemento.type = tipo_elemento_html;
+            nuevoElemento.id = id_nuevo_elemento;
+            clases_nuevo_elemento.split(' ').forEach(clase => {
+                nuevoElemento.classList.add(clase);
+            });
+            nuevoElemento.textContent = contenido_nuevo_elemento;
+            elemento_padre.appendChild(nuevoElemento);
+
+            // Agregar el event listener al nuevo elemento creado
+            nuevoElemento.addEventListener("click", function() {
+                //alert(nuevoElemento.id);
+                add_elementos(nuevoElemento.id, "input", "text", "", "form-control", "hola");
+
+            });
+        }
+
+        document.getElementById('bnt_add_miembro').addEventListener("click", function() {
+            add_elementos("contenedor_master", "div", "", "id_add_miembro", "bg-info bg-gradient", "hola");
+        });
+    </script>
+</body>
+</html>
