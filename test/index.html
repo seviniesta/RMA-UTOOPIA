@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style></style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Interface Utopiahome</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
 
 
     <script>
-        let add_elementos = (id_elemento_padre, crea_elemento_html, tipo_elemento_html, id_nuevo_elemento, clases_nuevo_elemento, contenido_nuevo_elemento) => {    
+        let add_elementos = (id_elemento_padre, crea_elemento_html, tipo_elemento_html, id_nuevo_elemento, clases_nuevo_elemento, contenido_nuevo_elemento,funciones) => {    
             
             const elemento_padre = document.getElementById(id_elemento_padre);
             const nuevoElemento = document.createElement(crea_elemento_html);
@@ -33,7 +33,13 @@
             nuevoElemento.innerHTML = contenido_nuevo_elemento;
             elemento_padre.appendChild(nuevoElemento);
 
+
+
+//========== test
+
+funciones();
      
+//========== test        
           
         }
 
@@ -41,16 +47,16 @@
        let contenedor_add_miembro=` 
        <div class="accordion" id="accordionExample">
   <div class="accordion-item">
-    <h2 class="accordion-header">
+    <h2 class="accordion-header">  
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Datos Básicos
+        <i class="bi bi-person-add" style="font-size: 2rem;">   </i> &nbsp; &nbsp;    Datos Básicos 
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
       <div class="accordion-body">
         <div class="row g-2">
           <div class="col-sm-6">
-            <label for="telefono" class="form-label">Teléfono (será tu ID) *</label>
+            <label for="telefono" class="form-label"><i class="bi bi-telephone"></i>Teléfono (será tu ID) *</label>
             <input type="tel" class="form-control" id="telefono" placeholder="Tu Móvil">
           </div>
           <div class="col-sm-6">
@@ -62,14 +68,14 @@
             <input type="text" class="form-control" id="alias" placeholder="Tu Alias">
           </div>
           <div class="col-sm-6">
-            <label for="imagenPerfil" class="form-label">Selecciona tu imagen de perfil:</label>
+            <label for="imagenPerfil" class="form-label"><i class="bi bi-file-earmark-person-fill"></i> Selecciona tu imagen de perfil:</label>
             <input class="form-control" type="file" id="imagenPerfil" accept="image/*">
           </div>
           
           <div class="row g-2">
-          <div class="col-sm-4">
-            <label for="tipoContacto" class="form-label">Otras maneras de Contactar</label>
-            <select class="form-select" id="tipoContacto">
+          <div class="col-sm-6">
+            <label for="tipoContacto" class="form-label">Otras maneras de Contactar&nbsp; &nbsp;<i class="bi bi-envelope-plus"></i> &nbsp;<i class="bi bi-whatsapp"></i>  &nbsp;<i class="bi bi-instagram"></i>&nbsp;<i class="bi bi-telephone-plus-fill"></i> </label>
+            <select class="form-select" id="select_tipoContacto">
               <option selected>Selecciona tipo de contacto</option>
               <option value="email">Email</option>
               <option value="whatsapp">WhatsApp</option>
@@ -77,23 +83,39 @@
               <option value="otroTelefono">Otro Teléfono</option>
             </select>
           </div>
-          <div class="col-sm-4">
-            <label for="detalleContacto" class="form-label">Detalle de Contacto</label>
-            <input type="text" class="form-control" id="detalleContacto" placeholder="Ingresa el contacto">
-          </div>
-          <div class="col-sm-4 mt-5">
-            <div class="d-flex justify-content-end">
-              <button class="btn btn-primary" type="button">+ Añadir Contacto</button>
-            </div>
-          </div>
+
+
+
+          <div class="col-sm-6">
+            <label for="detalleContacto" class="form-label">Pon tu, mail, numero whatsApp, instagram , segundo telefono....</label>
+            <input type="text" class="form-control" id="id_nuevo_contacto" placeholder="">
           </div>
 
 
 
+
+          <div class="col-sm-12"  id="contenedor_add_otros_contactos" >   </div>
+
+
+
+
+
+
+          <div class="d-grid gap-2">
+          <button class="btn btn-primary" id="id_btn_add_contacto" type="button">+ Añade otro contacto</button>
+        </div>
+          </div>
+
+    
+
+
+        
 
           <!-- Campos de Dirección -->
+          <div class="text-center"><i class="bi bi-house-add" style="font-size:2em;"></i> <b>Tu Ubicación:</b></div>
           <div class="col-sm-6">
-            <label for="direccion" class="form-label">Dirección</label>
+            
+            <label for="direccion" class="form-label">Calle y Número</label>
             <input type="text" class="form-control" id="direccion" placeholder="Tu Dirección">
           </div>
           <div class="col-sm-6">
@@ -146,7 +168,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Registra tus habilidades que ofreces en la comunidad
+        <img src="https://img.icons8.com/ios-filled/50/000000/development-skill.png" alt="habilidades" width="33" height="33">&nbsp;&nbsp; Registra tus habilidades que ofreces en la comunidad
       </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -184,7 +206,7 @@
         </div>
 
       <div class="row mt-3 mb-2 ">
-        <b>Dias disponibles:</b>
+        <b class="text-center">Dias disponibles <i class="bi bi-calendar-date"></i> </b>
         <div class="col-12"> 
           <select class="form-select" aria-label="Default select example">
             <option selected>Desde el dia:</option>
@@ -217,7 +239,7 @@
           </div> 
          
          
-          <div class="col-12 text-center mt-2 mb-2"> <b>Horario </b></div>
+          <div class="col-12 text-center mt-2 mb-2"><i class="bi-alarm"></i> <b >Horario </b></div>
 
           <div class="col-4 pt-1"> Desde las: </div>
          <div class="col-3"> <input type="number" id="" class="form-control" placeholder="H"></div>       
@@ -258,14 +280,34 @@
 
 
  `;
+
+
+
+
+
+
+
+ const add_otros_contactos=()=>{document.getElementById('id_btn_add_contacto').addEventListener("click", function() {
+
+const selectTipoContacto = document.querySelector('.form-select');
+const id_nuevo_contacto=document.getElementById("id_nuevo_contacto").value;
+
+  const nuevo_contacto = document.createElement('p');
+  nuevo_contacto.innerHTML = '<b>'+selectTipoContacto.value+':  </b>'+id_nuevo_contacto;
+  nuevo_contacto.style.backgroundColor = "#f0f0f0";
+  nuevo_contacto.style.padding = "10px";
+  nuevo_contacto.style.marginBottom = "10px";
+  nuevo_contacto.style.border = "1px solid #ccc";
+  document.getElementById("contenedor_add_otros_contactos").appendChild(nuevo_contacto);
+})};
        
     document.getElementById('bnt_alta_miembro').addEventListener("click", function() {
-            add_elementos("contenedor_master", "div", "", "id_add_miembro", "bg-light bg-gradient",contenedor_add_miembro);
+            add_elementos("contenedor_master", "div", "", "id_add_miembro", "bg-light bg-gradient",contenedor_add_miembro,add_otros_contactos);
         });
 
 
 
-
+       
 
 
 
