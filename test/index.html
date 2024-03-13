@@ -18,6 +18,55 @@
 
 
     <script>
+
+     
+let direccion=`  <!-- Campos de Dirección -->
+          <div class="text-center"><i class="bi bi-house-add" style="font-size:2em;"></i> <b>Tu Ubicación:</b></div>
+          <div class="col-sm-4">
+            
+            <label for="direccion" class="form-label">Calle Av, etc..</label>
+            <input type="text" class="form-control" id="direccion" placeholder="Tu Dirección">
+          </div>
+
+          <div class="col-sm-2">
+            <label for="numero" class="form-label">Número</label>
+            <input type="text" class="form-control" id="numero" placeholder="Número">
+          </div>
+        
+          <div class="col-sm-2">
+            <label for="portal" class="form-label">Portal</label>
+            <input type="text" class="form-control" id="portal" placeholder="Portal">
+          </div>
+          <div class="col-sm-2">
+            <label for="planta" class="form-label">Planta</label>
+            <input type="text" class="form-control" id="planta" placeholder="Planta">
+          </div>
+          <div class="col-sm-2">
+            <label for="puerta" class="form-label">Puerta</label>
+            <input type="text" class="form-control" id="puerta" placeholder="Puerta">
+          </div>
+         
+          <div class="col-sm-6">
+            <label for="poblacion" class="form-label">Población</label>
+            <input type="text" class="form-control" id="poblacion" placeholder="Tu Población">
+          </div>
+
+          <div class="col-sm-6">
+            <label for="codigoPostal" class="form-label">Código Postal</label>
+            <input type="text" class="form-control" id="codigoPostal" placeholder="Tu Código Postal">
+          </div>
+
+          <div class="col-sm-6">
+            <label for="pais" class="form-label">Provincia</label>
+            <input type="text" class="form-control" id="pais" placeholder="Provincia">
+          </div>
+          <div class="col-sm-6">
+            <label for="pais" class="form-label">País</label>
+            <input type="text" class="form-control" id="pais" placeholder="Tu País">
+          </div>`;
+
+
+
         let add_elementos = (id_elemento_padre, crea_elemento_html, tipo_elemento_html, id_nuevo_elemento, clases_nuevo_elemento, contenido_nuevo_elemento,funciones) => {    
             
             const elemento_padre = document.getElementById(id_elemento_padre);
@@ -35,11 +84,13 @@
 
 
 
-//========== test
+//==========  Bucle Array de funciones
 
-funciones();
+
+
+funciones.forEach(func => func());
      
-//========== test        
+//==========  Bucle Array de funciones    
           
         }
 
@@ -48,11 +99,11 @@ funciones();
        <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header">  
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         <i class="bi bi-person-add" style="font-size: 2rem;">   </i> &nbsp; &nbsp;    Datos Básicos 
       </button>
     </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
         <div class="row g-2">
           <div class="col-sm-6">
@@ -94,77 +145,30 @@ funciones();
 
 
 
-          <div class="col-sm-12"  id="contenedor_add_otros_contactos" >   </div>
-
-
-
-
+         
 
 
           <div class="d-grid gap-2">
           <button class="btn btn-primary" id="id_btn_add_contacto" type="button">+ Añade otro contacto</button>
         </div>
+        <div class="col-sm-12"  id="contenedor_add_otros_contactos" >   </div>
           </div>
-
-    
-
-
-        
-
-          <!-- Campos de Dirección -->
-          <div class="text-center"><i class="bi bi-house-add" style="font-size:2em;"></i> <b>Tu Ubicación:</b></div>
-          <div class="col-sm-6">
-            
-            <label for="direccion" class="form-label">Calle y Número</label>
-            <input type="text" class="form-control" id="direccion" placeholder="Tu Dirección">
-          </div>
-          <div class="col-sm-6">
-            <label for="poblacion" class="form-label">Población</label>
-            <input type="text" class="form-control" id="poblacion" placeholder="Tu Población">
-          </div>
-          <div class="col-sm-3">
-            <label for="portal" class="form-label">Portal</label>
-            <input type="text" class="form-control" id="portal" placeholder="Portal">
-          </div>
-          <div class="col-sm-3">
-            <label for="planta" class="form-label">Planta</label>
-            <input type="text" class="form-control" id="planta" placeholder="Planta">
-          </div>
-          <div class="col-sm-3">
-            <label for="puerta" class="form-label">Puerta</label>
-            <input type="text" class="form-control" id="puerta" placeholder="Puerta">
-          </div>
-          <div class="col-sm-3">
-            <label for="codigoPostal" class="form-label">Código Postal</label>
-            <input type="text" class="form-control" id="codigoPostal" placeholder="Tu Código Postal">
-          </div>
-
-          <div class="col-sm-6">
-            <label for="pais" class="form-label">Provincia</label>
-            <input type="text" class="form-control" id="pais" placeholder="Provincia">
-          </div>
-          <div class="col-sm-6">
-            <label for="pais" class="form-label">País</label>
-            <input type="text" class="form-control" id="pais" placeholder="Tu País">
-          </div>
+          ${direccion}
+ 
           <div class="col-12 mt-2 mb-2">
             <label for="notas" class="form-label">Notas</label>
             <textarea class="form-control" id="notas" placeholder="Notas"></textarea>
           </div>
                 
         </div>
-
-       
-        
-
-
-
-
-
+     
       </div>
     </div>
   </div>
 
+
+
+                                                                        <!-- HABILIDADES -->
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -175,87 +179,92 @@ funciones();
       <div class="accordion-body">
         <div class="row g-2">
           <div class="col-md-6">
-            <label for="habilidad" class="form-label">¿Cuál es tu habilidad?</label>
-            <input type="text" class="form-control" id="habilidad" placeholder="Describe brevemente tu habilidad">
+            <label for="id_value_habilidad" class="form-label">¿Cuál es tu habilidad?</label>
+            <input type="text" class="form-control" id="id_value_habilidad" placeholder="Describe brevemente tu habilidad">
           </div>
           <div class="col-md-3">
-            <label for="nivel" class="form-label">¿Cuál es tu nivel?</label>
-            <select class="form-select" id="nivel">
+            <label for="select_nivel" class="form-label">¿Cuál es tu nivel?</label>
+            <select class="form-select" id="select_nivel">
               <option selected>Selecciona Nivel</option>
-              <option value="1">Principiante</option>
-              <option value="2">Con Tablas</option>
-              <option value="3">Experto</option>
+              <option value="principiante">Principiante</option>
+              <option value="tablas">Con Tablas</option>
+              <option value="experto">Experto</option>
             </select>
           </div>
           <div class="col-md-3">
-            <label for="modalidad" class="form-label">¿Cómo realizarás tu trabajo?</label>
-            <select class="form-select" id="modalidad">
+            <label for="select_modalidad" class="form-label">¿Cómo realizarás tu trabajo?</label>
+            <select class="form-select" id="select_modalidad">
               <option selected>Selecciona la modalidad</option>
-              <option value="1">Remoto</option>
-              <option value="2">Presencial</option>
-              <option value="3">Ambas</option>
+              <option value="Remoto">Remoto</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Remoto y Presencial">Ambas</option>
             </select>
           </div>
           <div class="col-12 mt-2 mb-2">
-            <label for="detalleHabilidad" class="form-label">Detalla tu habilidad</label>
-            <textarea class="form-control" id="detalleHabilidad" placeholder="Detalla tu habilidad"></textarea>
+            <label for="text_detalleHabilidad" class="form-label">Detalla tu habilidad</label>
+            <textarea class="form-control" id="text_detalleHabilidad" placeholder="Detalla tu habilidad"></textarea>
           </div>
         </div>
+
+       
+
         <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="button">+ Añade Habilidad</button>
+
+          <button class="btn btn-primary mt-3" id="id_btn_add_habilidad" type="button">+ Añade Habilidad</button>
         </div>
+
+        <div class="d-grid gap-2" id="id_habilidades"> </div>
+        
+
 
       <div class="row mt-3 mb-2 ">
         <b class="text-center">Dias disponibles <i class="bi bi-calendar-date"></i> </b>
         <div class="col-12"> 
-          <select class="form-select" aria-label="Default select example">
+          <select class="form-select" aria-label="Default select example" id="select_dia_semana_desde" >
             <option selected>Desde el dia:</option>
-            <option value="1">Desde el Lunes</option>
-            <option value="2">Desde el Martes</option>
-            <option value="3">Desde el Miercoles</option>
-            <option value="3">Desde el Jueves</option>
-            <option value="3">Desde el Viernes</option>
-            <option value="3">Desde el Sabado</option>
-            <option value="3">Desde el Domingo</option>
+            <option value="Lunes">Desde el Lunes</option>
+            <option value="Martes">Desde el Martes</option>
+            <option value="Miercoles">Desde el Miercoles</option>
+            <option value="Jueves">Desde el Jueves</option>
+            <option value="Viernes">Desde el Viernes</option>
+            <option value="Sabado">Desde el Sabado</option>
+            <option value="Domingo">Desde el Domingo</option>
           </select> </div>  
 
          <div class="col-12"> 
          
-          <select class="form-select" aria-label="Default select example">
+          <select class="form-select" aria-label="Default select example" id="select_dia_semana_hasta"  >
             <option selected>Hasta el dia:</option>
-            <option value="1">Hasta el Lunes</option>
-            <option value="2">Hasta el Martes</option>
-            <option value="3">Hasta el  Miercoles</option>
-            <option value="3">Hasta el Jueves</option>
-            <option value="3">Hasta el Viernes</option>
-            <option value="3">Hasta el Sabado</option>
-            <option value="3">Hasta el Domingo</option>
+            <option value="Lunes">Hasta el Lunes</option>
+            <option value="Martes">Hasta el Martes</option>
+            <option value="Miercoles">Hasta el  Miercoles</option>
+            <option value="Jueves">Hasta el Jueves</option>
+            <option value="Viernes">Hasta el Viernes</option>
+            <option value="Sabado">Hasta el Sabado</option>
+            <option value="Domingo">Hasta el Domingo</option>
           </select> 
             
-          
-          
-          
-          
           </div> 
          
          
           <div class="col-12 text-center mt-2 mb-2"><i class="bi-alarm"></i> <b >Horario </b></div>
 
           <div class="col-4 pt-1"> Desde las: </div>
-         <div class="col-3"> <input type="number" id="" class="form-control" placeholder="H"></div>       
+         <div class="col-3"> <input type="number" id="desde_hora" class="form-control" placeholder="H"></div>       
          <div class="col-1"> : </div>
-         <div class="col-3"> <input type="number" id="" class="form-control" placeholder="M"></div>
+         <div class="col-3"> <input type="number" id="desde_minutos" class="form-control" placeholder="M"></div>
   
          <div class="col-4 pt-1"> Hasta las: </div>
-         <div class="col-3"> <input type="number" id="" class="form-control" placeholder="H"></div>       
+         <div class="col-3"> <input type="number" id="hasta_hora" class="form-control" placeholder="H"></div>       
          <div class="col-1"> : </div>
-         <div class="col-3"> <input type="number" id="" class="form-control" placeholder="M"></div>
+         <div class="col-3"> <input type="number" id="hasta_minutos" class="form-control" placeholder="M"></div>
          
          
          <div class="d-grid gap-2 mt-2 mb-2">
-          <button class="btn btn-primary" type="button">+ Añade Horario Disponible</button>
+          <button class="btn btn-primary" type="button"  id="id_btn_add_disponibilidad" >+ Añade Horario Disponible</button>
         </div>
    
+        <div class="col-12" id="id_disponibilidad"> </div>
       </div>
 
 
@@ -275,11 +284,7 @@ funciones();
       </div>
     </div>
   </div>
-</div>
-
-
-
- `;
+ </div>`;
 
 
 
@@ -287,24 +292,110 @@ funciones();
 
 
 
- const add_otros_contactos=()=>{document.getElementById('id_btn_add_contacto').addEventListener("click", function() {
-
-const selectTipoContacto = document.querySelector('.form-select');
-const id_nuevo_contacto=document.getElementById("id_nuevo_contacto").value;
-
-  const nuevo_contacto = document.createElement('p');
-  nuevo_contacto.innerHTML = '<b>'+selectTipoContacto.value+':  </b>'+id_nuevo_contacto;
-  nuevo_contacto.style.backgroundColor = "#f0f0f0";
-  nuevo_contacto.style.padding = "10px";
-  nuevo_contacto.style.marginBottom = "10px";
-  nuevo_contacto.style.border = "1px solid #ccc";
-  document.getElementById("contenedor_add_otros_contactos").appendChild(nuevo_contacto);
-})};
+ const add_otros_contactos=()=>{ 
+                                  document.getElementById('id_btn_add_contacto').addEventListener("click", function() {
+                                         const selectTipoContacto = document.querySelector('.form-select');
+                                         const id_nuevo_contacto=document.getElementById("id_nuevo_contacto").value;
+                                         const nuevo_contacto = document.createElement('p');
+                                         nuevo_contacto.innerHTML = '<b>'+selectTipoContacto.value+':  </b>'+id_nuevo_contacto;
+                                         nuevo_contacto.style.backgroundColor = "#f0f0f0";
+                                         nuevo_contacto.style.padding = "10px";
+                                         nuevo_contacto.style.marginBottom = "10px";
+                                         nuevo_contacto.style.border = "1px solid #ccc";
+                                         document.getElementById("contenedor_add_otros_contactos").appendChild(nuevo_contacto);
+                                 })};
        
-    document.getElementById('bnt_alta_miembro').addEventListener("click", function() {
-            add_elementos("contenedor_master", "div", "", "id_add_miembro", "bg-light bg-gradient",contenedor_add_miembro,add_otros_contactos);
-        });
+                            
 
+
+
+ const add_habilidades=()=>{ 
+                                  document.getElementById('id_btn_add_habilidad').addEventListener("click", function() {
+                                  
+                                   // Obtener el valor del input
+                                    const id_valor_habilidad = document.getElementById("id_value_habilidad").value;
+
+                                    const select_nivel= document.getElementById("select_nivel").value;
+
+                                    const select_modalidad= document.getElementById("select_modalidad").value;
+                                   
+                                    const text_detalleHabilidad= document.getElementById("text_detalleHabilidad").value;
+
+                                    
+                                   // Crear un nuevo elemento <p> para la habilidad
+                                  const nuevoElemento = document.createElement("p");
+
+                                 
+                                  //  Asignar el valor del input al contenido de texto del nuevo elemento
+                                  nuevoElemento.innerHTML= ` <b> ${id_valor_habilidad} </b> =>   ${select_nivel}  => ${select_modalidad} =><i> ${text_detalleHabilidad} </i>  `;
+                                  
+                                  
+                                  nuevoElemento.style.backgroundColor = "#f0f0f0";
+                                  nuevoElemento.style.padding = "10px";
+                                  nuevoElemento.style.marginBottom = "10px";
+                                  nuevoElemento.style.border = "1px solid #ccc";
+
+
+                                  
+                                  // Añadir el nuevo elemento como hijo del elemento con id "id_habilidad"
+                                  document.getElementById("id_habilidades").appendChild(nuevoElemento);
+
+                             
+
+                                 })};
+       
+                                
+//=============================================================  TEST
+
+ const add_disponibilidad=()=>{ 
+                                  document.getElementById('id_btn_add_disponibilidad').addEventListener("click", function() {
+                                  
+                                    const select_dia_semana_desde = document.querySelector('#select_dia_semana_desde').value;
+                                    const select_dia_semana_hasta = document.querySelector('#select_dia_semana_hasta').value;
+
+                                    const value_desde_hora = document.querySelector('#desde_hora').value;
+                                    const value_desde_minutos = document.querySelector('#desde_minutos').value;
+
+                                    const value_hasta_hora = document.querySelector('#hasta_hora').value;
+                                    const value_hasta_minutos = document.querySelector('#hasta_minutos').value;
+                                   
+                                                                                                      
+                                   // Crear un nuevo elemento <p> para la habilidad
+                                  const nuevoElemento = document.createElement("p");
+
+                                 
+                                  //  Asignar el valor del input al contenido de texto del nuevo elemento
+                                  nuevoElemento.innerHTML= ` Desde el día <b> ${select_dia_semana_desde} </b> => Hasta el día  ${select_dia_semana_hasta}  => Entre la ${value_desde_hora}:${value_desde_minutos} => Hasta las ${value_hasta_hora}:${value_hasta_minutos}  `;
+                                  
+                                  
+                                  nuevoElemento.style.backgroundColor = "#f0f0f0";
+                                  nuevoElemento.style.padding = "10px";
+                                  nuevoElemento.style.marginBottom = "10px";
+                                  nuevoElemento.style.border = "1px solid #ccc";
+
+
+                                  
+                                  // Añadir el nuevo elemento como hijo del elemento con id "id_habilidad"
+                                  document.getElementById("id_disponibilidad").appendChild(nuevoElemento);
+                                
+                               // alert(select_dia_semana_desde+'  '+select_dia_semana_hasta +' '+  value_desde_hora        +' '+  value_desde_minutos      +' '+   value_hasta_hora        +' '+  value_hasta_minutos       );
+
+                             
+
+                                 })};
+  
+
+//=============================================================  FIN TEST
+
+
+
+  //================================================================================== MASTER================================================                               
+
+  let pasamos_funciones = [add_habilidades, add_otros_contactos,add_disponibilidad];// Array de funciones
+                                
+ document.getElementById('bnt_alta_miembro').addEventListener("click", function() {
+                                                                                    add_elementos("contenedor_master", "div", "", "id_add_miembro", "bg-light bg-gradient",contenedor_add_miembro,pasamos_funciones);
+                                                                                  });
 
 
        
