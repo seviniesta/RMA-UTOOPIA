@@ -20,7 +20,82 @@
 
 
 
+
+<!--     Esto es una prueba -->
+
+<div class="row ">
+  
+
+<div class="col-md-2" >
+  <label for="telefono" class="form-label"></i>Codigo Pais*</label><br>
+  <select class="form-select" id="codigo_pais" name="codigo_pais">
+    <option selected value="+34">España (+34)</option>
+    <option value="+1">Estados Unidos (+1)</option>
+    <option value="+44">Reino Unido (+44)</option>
+    <option value="+33">Francia (+33)</option>
+    <option value="+49">Alemania (+49)</option>
+    <option value="+81">Japón (+81)</option>
+    <option value="+61">Australia (+61)</option>
+    <option value="+86">China (+86)</option>
+    <option value="+91">India (+91)</option>
+    <!-- Agrega más países según sea necesario -->
+  </select>
+  </div>
+
+  <div class="col-md-2" >
+
+<label for="telefono" class="form-label"><i class="bi bi-telephone"></i>Teléfono (será tu ID) *</label>
+<input type="tel" class="form-control" id="telefono" placeholder="Tu Móvil">
+
+</div>
+
+
+<div class="col-md-2" >
+  <label for="alias" class="form-label">Alias *</label> <input type="text" class="form-control" id="alias" placeholder="Tu Alias">
+
+</div>
+
+<div class="col-md-2" >
+
+
+  <label for="tipoContacto" class="form-label">Otras maneras de Contactar&nbsp; &nbsp;<i class="bi bi-envelope-plus"></i> &nbsp;<i class="bi bi-whatsapp"></i>  &nbsp;<i class="bi bi-instagram"></i>&nbsp;<i class="bi bi-telephone-plus-fill"></i> </label>
+                                            <select class="form-select" id="select_tipoContacto">
+                                              <option selected>Selecciona tipo de contacto</option>
+                                              <option value="email">Email</option>
+                                              <option value="whatsapp">WhatsApp</option>
+                                              <option value="instagram">Instagram</option>
+                                              <option value="otroTelefono">Otro Teléfono</option>
+                                            </select>
+                                            
+
+</div>
+
+
+<div class="col-md-2" >
+
+  <label for="detalleContacto" class="form-label">Escribe el mail ,  instagram etc..</label>
+  <input type="text" class="form-control" id="id_nuevo_contacto" placeholder=" mail, numero whatsApp, instagram , segundo telefono">
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
   <script>
+
+
+
+
+
 
     //===========================================  Variables genericas =====================
 
@@ -79,7 +154,90 @@
                     <input type="text" class="form-control" id="pais" placeholder="Tu País">
                   </div>`;
 
+//*****************************************************Datos Basicos
 
+const id_usuario=`<label for="telefono" class="form-label"><i class="bi bi-telephone"></i>Teléfono (será tu ID) *</label>
+                                          <input type="tel" class="form-control" id="telefono" placeholder="Tu Móvil">`;
+const alias=`<input type="text" class="form-control" id="alias" placeholder="Tu Alias"><label for="alias" class="form-label">Alias *</label>`;
+
+const otros_contactos=`<label for="tipoContacto" class="form-label">Otras maneras de Contactar&nbsp; &nbsp;<i class="bi bi-envelope-plus"></i> &nbsp;<i class="bi bi-whatsapp"></i>  &nbsp;<i class="bi bi-instagram"></i>&nbsp;<i class="bi bi-telephone-plus-fill"></i> </label>
+                                            <select class="form-select" id="select_tipoContacto">
+                                              <option selected>Selecciona tipo de contacto</option>
+                                              <option value="email">Email</option>
+                                              <option value="whatsapp">WhatsApp</option>
+                                              <option value="instagram">Instagram</option>
+                                              <option value="otroTelefono">Otro Teléfono</option>
+                                            </select>
+                                            <label for="detalleContacto" class="form-label">Pon tu, mail, numero whatsApp, instagram , segundo telefono....</label>
+                                            <input type="text" class="form-control" id="id_nuevo_contacto" placeholder="">
+                                            `;
+
+
+const notas_generales=`<label for="notas" class="form-label">Notas</label><textarea class="form-control" id="notas" placeholder="Notas"></textarea>`;
+
+//-- Habilidades
+
+const habilidad=` <label for="id_value_habilidad" class="form-label">¿Cuál es tu habilidad?</label> <input type="text" class="form-control" id="id_value_habilidad" placeholder="Describe brevemente tu habilidad">`;
+
+const nivel_habilidad=`<label for="select_nivel" class="form-label">¿Cuál es tu nivel?</label>
+                              
+                              <select class="form-select" id="select_nivel">
+                              <option selected>Selecciona Nivel</option>
+                              <option value="principiante">Principiante</option>
+                              <option value="tablas">Con Tablas</option>
+                              <option value="experto">Experto</option>
+                              </select>`;
+
+const modalidad_trabajo=`
+                              <label for="select_modalidad" class="form-label">¿Cómo realizarías tu trabajo?</label>
+                              <select class="form-select" id="select_modalidad">
+                              <option selected>Selecciona la modalidad</option>
+                              <option value="Remoto">Remoto</option>
+                              <option value="Presencial">Presencial</option>
+                              <option value="Remoto y Presencial">Ambas</option>
+                              </select>`;
+
+const detalla_habilidad=` <label for="text_detalleHabilidad" class="form-label">Detalla tu habilidad</label>
+                                <textarea class="form-control" id="text_detalleHabilidad" placeholder="Detalla tu habilidad"></textarea>`;
+
+const btn_add_habilidad=`<button class="btn btn-primary mt-3" id="id_btn_add_habilidad" type="button">+ Añade Habilidad</button>`;
+
+const contenedor_habilidades=`<div class="d-grid gap-2" id="id_habilidades"> </div>`;
+
+const select_dia_semana_desde=`       <b class="text-center">Dias disponibles <i class="bi bi-calendar-date"></i> </b>
+                                  <div class="col-12"> 
+                                    <select class="form-select" aria-label="Default select example" id="select_dia_semana_desde" >
+                                      <option selected>Desde el dia:</option>
+                                      <option value="Lunes">Desde el Lunes</option>
+                                      <option value="Martes">Desde el Martes</option>
+                                      <option value="Miercoles">Desde el Miercoles</option>
+                                      <option value="Jueves">Desde el Jueves</option>
+                                      <option value="Viernes">Desde el Viernes</option>
+                                      <option value="Sabado">Desde el Sabado</option>
+                                      <option value="Domingo">Desde el Domingo</option>
+                                    </select> `;
+
+
+const select_dia_semana_hasta=`<select class="form-select" aria-label="Default select example" id="select_dia_semana_hasta"  >
+                                        <option selected>Hasta el dia:</option>
+                                        <option value="Lunes">Hasta el Lunes</option>
+                                        <option value="Martes">Hasta el Martes</option>
+                                        <option value="Miercoles">Hasta el  Miercoles</option>
+                                        <option value="Jueves">Hasta el Jueves</option>
+                                        <option value="Viernes">Hasta el Viernes</option>
+                                        <option value="Sabado">Hasta el Sabado</option>
+                                        <option value="Domingo">Hasta el Domingo</option>
+                                      </select>`;
+
+const desde_hora=`<input type="number" id="desde_hora" class="form-control" placeholder="H">`;
+
+const desde_minutos=`<input type="number" id="desde_minutos" class="form-control" placeholder="M">`;
+
+const hasta_hora=`<input type="number" id="hasta_hora" class="form-control" placeholder="H">`;
+
+const hasta_minutos=`<input type="number" id="hasta_minutos" class="form-control" placeholder="M">`;
+
+const id_btn_add_disponibilidad=`<button class="btn btn-primary" type="button"  id="id_btn_add_disponibilidad" >+ Añade Horario Disponible</button>`;
 
     //=========================================== fin Variables genericas =====================
 
@@ -113,7 +271,7 @@
     }
 
 
-    let contenedor_add_miembro = ` 
+    let contenedor_add_miembro = `
 <div class="accordion"  id="accordionExample">
   
               <div class="accordion-item">
@@ -129,13 +287,8 @@
                     
                                 <div class="row g-2">
                     
-                                      <div class="col-sm-6">
-                
-                                          <label for="telefono" class="form-label"><i class="bi bi-telephone"></i>Teléfono (será tu ID) *</label>
-                                          <input type="tel" class="form-control" id="telefono" placeholder="Tu Móvil">
-                                      </div>
-          
-                            
+                                      <div class="col-sm-6">${id_usuario}</div>
+    
                                       <div class="col-sm-6">
                             
                                               <label for="nombreApellido" class="form-label">Nombre y Apellidos</label>
@@ -143,11 +296,7 @@
                                       </div>
           
                       
-                                      <div class="col-sm-6">
-        
-                                        <input type="text" class="form-control" id="alias" placeholder="Tu Alias">
-                                        <label for="alias" class="form-label">Alias *</label>
-                                      </div>
+                                      <div class="col-sm-6">${alias}</div>
           
                                       
                                       <div class="col-sm-6">
@@ -163,20 +312,10 @@
           
           
                                     <div class="col-sm-6">
-                                            <label for="tipoContacto" class="form-label">Otras maneras de Contactar&nbsp; &nbsp;<i class="bi bi-envelope-plus"></i> &nbsp;<i class="bi bi-whatsapp"></i>  &nbsp;<i class="bi bi-instagram"></i>&nbsp;<i class="bi bi-telephone-plus-fill"></i> </label>
-                                            <select class="form-select" id="select_tipoContacto">
-                                              <option selected>Selecciona tipo de contacto</option>
-                                              <option value="email">Email</option>
-                                              <option value="whatsapp">WhatsApp</option>
-                                              <option value="instagram">Instagram</option>
-                                              <option value="otroTelefono">Otro Teléfono</option>
-                                            </select>
+                                      ${otros_contactos}
+                                      
                                       </div>
 
-                                      <div class="col-sm-6">
-                                        <label for="detalleContacto" class="form-label">Pon tu, mail, numero whatsApp, instagram , segundo telefono....</label>
-                                        <input type="text" class="form-control" id="id_nuevo_contacto" placeholder="">
-                                      </div>
                                   
 
                                       <div class="col-sm-12">
@@ -189,8 +328,7 @@
                                       ${direccion}
 
                                       <div class="col-12 mt-2 mb-2">
-                                        <label for="notas" class="form-label">Notas</label>
-                                        <textarea class="form-control" id="notas" placeholder="Notas"></textarea>
+                                      ${notas_generales}
                                       </div>
                 
                             </div>
@@ -198,8 +336,6 @@
                     </div>
     </div>
   </div>
-
-
 
                                                                         <!-- HABILIDADES -->
         <div class="accordion-item">
@@ -216,99 +352,43 @@
         
         
                           <div class="row g-2">
+                    
+                            <div class="col-md-6">${habilidad}</div>
           
-          
-                            <div class="col-md-6">
-                                <label for="id_value_habilidad" class="form-label">¿Cuál es tu habilidad?</label>
-                                <input type="text" class="form-control" id="id_value_habilidad" placeholder="Describe brevemente tu habilidad">
-                            </div>
-          
-                            <div class="col-md-3">
-                                <label for="select_nivel" class="form-label">¿Cuál es tu nivel?</label>
+                            <div class="col-md-3">${nivel_habilidad}</div>                 
                               
-                                <select class="form-select" id="select_nivel">
-                                <option selected>Selecciona Nivel</option>
-                                <option value="principiante">Principiante</option>
-                                <option value="tablas">Con Tablas</option>
-                                <option value="experto">Experto</option>
-                                </select>
-                              </div>
-                            <div class="col-md-3">
-            
-                              <label for="select_modalidad" class="form-label">¿Cómo realizarás tu trabajo?</label>
-                              <select class="form-select" id="select_modalidad">
-                              <option selected>Selecciona la modalidad</option>
-                              <option value="Remoto">Remoto</option>
-                              <option value="Presencial">Presencial</option>
-                              <option value="Remoto y Presencial">Ambas</option>
-                              </select>
-                            </div>
+                            <div class="col-md-3">${modalidad_trabajo}</div>       
 
-
-                            <div class="col-12 mt-2 mb-2">
-                                <label for="text_detalleHabilidad" class="form-label">Detalla tu habilidad</label>
-                                <textarea class="form-control" id="text_detalleHabilidad" placeholder="Detalla tu habilidad"></textarea>
-                            </div>
+                            <div class="col-12 mt-2 mb-2">${detalla_habilidad}</div>                              
+                            
                         </div>
 
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-primary mt-3" id="id_btn_add_habilidad" type="button">+ Añade Habilidad</button>
-                        </div>
+                        <div class="d-grid gap-2">${btn_add_habilidad}</div>
 
-                        <div class="d-grid gap-2" id="id_habilidades"> </div>
-        
-                        <div class="row mt-3 mb-2 ">
-                                  <b class="text-center">Dias disponibles <i class="bi bi-calendar-date"></i> </b>
-                                  <div class="col-12"> 
-                                    <select class="form-select" aria-label="Default select example" id="select_dia_semana_desde" >
-                                      <option selected>Desde el dia:</option>
-                                      <option value="Lunes">Desde el Lunes</option>
-                                      <option value="Martes">Desde el Martes</option>
-                                      <option value="Miercoles">Desde el Miercoles</option>
-                                      <option value="Jueves">Desde el Jueves</option>
-                                      <option value="Viernes">Desde el Viernes</option>
-                                      <option value="Sabado">Desde el Sabado</option>
-                                      <option value="Domingo">Desde el Domingo</option>
-                                    </select> 
-                          </div>  
+                        ${contenedor_habilidades}
 
-                          <div class="row"> 
+                        <div class="row mt-3 mb-2 ">${select_dia_semana_desde}</div>                        
+                          
+                        <div class="row"> ${select_dia_semana_hasta}</div> 
         
-                                      <select class="form-select" aria-label="Default select example" id="select_dia_semana_hasta"  >
-                                        <option selected>Hasta el dia:</option>
-                                        <option value="Lunes">Hasta el Lunes</option>
-                                        <option value="Martes">Hasta el Martes</option>
-                                        <option value="Miercoles">Hasta el  Miercoles</option>
-                                        <option value="Jueves">Hasta el Jueves</option>
-                                        <option value="Viernes">Hasta el Viernes</option>
-                                        <option value="Sabado">Hasta el Sabado</option>
-                                        <option value="Domingo">Hasta el Domingo</option>
-                                      </select> 
-                          </div> 
-        
-        
-                          <div class="col-12 text-center mt-2 mb-2"><i class="bi-alarm"></i> <b >Horario </b></div>
+                        <div class="col-12 text-center mt-2 mb-2"><i class="bi-alarm"></i> <b >Horario </b></div>
 
                           <div class="col-4 pt-1"> Desde las: </div>
-                          <div class="col-3"> <input type="number" id="desde_hora" class="form-control" placeholder="H"></div>       
-                          <div class="col-1"> : </div>
-                          <div class="col-3"> <input type="number" id="desde_minutos" class="form-control" placeholder="M"></div>
-  
+                          <div class="col-3">${desde_hora} </div>                      
+                          <div class="col-1"> :</div>
+                          <div class="col-3"> ${desde_minutos}</div>                           
                           <div class="col-4 pt-1"> Hasta las: </div>
-                          <div class="col-3"> <input type="number" id="hasta_hora" class="form-control" placeholder="H"></div>       
+                          <div class="col-3"> ${hasta_hora}</div>       
                           <div class="col-1"> : </div>
-                          <div class="col-3"> <input type="number" id="hasta_minutos" class="form-control" placeholder="M"></div>
+                          <div class="col-3"> ${hasta_minutos}</div>
                           
-                          <div class="col-12">
-                            <button class="btn btn-primary" type="button"  id="id_btn_add_disponibilidad" >+ Añade Horario Disponible</button>
-                          </div>
+                          <div class="col-12"> ${id_btn_add_disponibilidad}</div>
   
                           <div class="col-12" id="id_disponibilidad"> </div>
                   </div>
             </div>
         </div>
     </div>
-
 
 
   <div class="accordion-item">
@@ -443,11 +523,6 @@
     };
 
 
-    //=============================================================  TEST
-
-
-
-
     const add_adjuntos = () => {
       document.getElementById('id_bnt_fichero_adjunto').addEventListener("click", function () {
 
@@ -471,15 +546,6 @@
 
 
 
-
-
-
-
-
-    //=============================================================  FIN TEST
-
-
-
     //================================================================================== MASTER================================================                               
 
     let pasamos_funciones = [add_habilidades, add_otros_contactos, add_disponibilidad, add_adjuntos];// Array de funciones
@@ -488,15 +554,9 @@
       add_elementos("contenedor_master", "div", "", "id_add_miembro", "bg-light bg-gradient", contenedor_add_miembro, pasamos_funciones);
     });
 
+</script>
 
-
-
-
-
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"     crossorigin="anonymous"></script>
 
 
 
