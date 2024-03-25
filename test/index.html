@@ -19,46 +19,151 @@
   <div class="container-fluid" id="contenedor_master"></div>
 
 
+  <p id="ubicacion">Esperando ubicación...</p>
+
+<!--     Esto es una prueba 
 
 
-<!--     Esto es una prueba -->
+
+
+
+
+
+
+
 
 <div class="row ">
   
 
-<div class="col-md-2" >
-  <label for="telefono" class="form-label"></i>Codigo Pais*</label><br>
-  <select class="form-select" id="codigo_pais" name="codigo_pais">
-    <option selected value="+34">España (+34)</option>
-    <option value="+1">Estados Unidos (+1)</option>
-    <option value="+44">Reino Unido (+44)</option>
-    <option value="+33">Francia (+33)</option>
-    <option value="+49">Alemania (+49)</option>
-    <option value="+81">Japón (+81)</option>
-    <option value="+61">Australia (+61)</option>
-    <option value="+86">China (+86)</option>
-    <option value="+91">India (+91)</option>
-    <!-- Agrega más países según sea necesario -->
-  </select>
+  <div class="col-md-2" >
+    <label for="telefono" class="form-label"></i>Codigo Pais*</label><br>
+    <select class="form-select" id="codigo_pais" name="codigo_pais">
+      <option selected value="+34">España (+34)</option>
+      <option value="+1">Estados Unidos (+1)</option>
+      <option value="+44">Reino Unido (+44)</option>
+      <option value="+33">Francia (+33)</option>
+      <option value="+49">Alemania (+49)</option>
+      <option value="+81">Japón (+81)</option>
+      <option value="+61">Australia (+61)</option>
+      <option value="+86">China (+86)</option>
+      <option value="+91">India (+91)</option>
+      
+    </select>
+    </div>
+  
+    <div class="col-md-3" >
+  
+  <label for="telefono" class="form-label"><i class="bi bi-telephone"></i>Teléfono (será tu ID) *</label>
+  <input type="tel" class="form-control" id="telefono" placeholder="Tu Móvil">
+  
+  </div>
+  
+  
+  <div class="col-md-4" >
+    <label for="alias" class="form-label">Alias *</label> <input type="text" class="form-control" id="alias" placeholder="Tu Alias">
+  
+  </div>
+  
+  
+  <div class="col-md-3" >
+    <button type="button" class="btn mt-5 mt-1" style="  background-color: #00CED1;  border-color: #00CED1; color: #fff; ">Botón Azul Turquesa</button>
+  
+  </div>
+  
+  <div class="col-md-2" >
+  
+  
+    <label for="tipoContacto" class="form-label">Otras maneras de Contactar&nbsp; &nbsp;<i class="bi bi-envelope-plus"></i> &nbsp;<i class="bi bi-whatsapp"></i>  &nbsp;<i class="bi bi-instagram"></i>&nbsp;<i class="bi bi-telephone-plus-fill"></i> </label>
+                                              <select class="form-select" id="select_tipoContacto">
+                                                <option selected>Selecciona tipo de contacto</option>
+                                                <option value="email">Email</option>
+                                                <option value="whatsapp">WhatsApp</option>
+                                                <option value="instagram">Instagram</option>
+                                                <option value="otroTelefono">Otro Teléfono</option>
+                                              </select>
+                                              
+  
+  </div>
+  
+  
+  <div class="col-md-2" >
+  
+    <label for="detalleContacto" class="form-label">Escribe el mail ,  instagram etc..</label>
+    <input type="text" class="form-control" id="id_nuevo_contacto" placeholder=" mail, numero whatsApp, instagram , segundo telefono">
+  
+  
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
   </div>
 
-  <div class="col-md-2" >
-
-<label for="telefono" class="form-label"><i class="bi bi-telephone"></i>Teléfono (será tu ID) *</label>
-<input type="tel" class="form-control" id="telefono" placeholder="Tu Móvil">
-
-</div>
+-->
 
 
-<div class="col-md-2" >
-  <label for="alias" class="form-label">Alias *</label> <input type="text" class="form-control" id="alias" placeholder="Tu Alias">
 
-</div>
+<div class="m-2"> 
+  <div class="container-fluid p-2" style="border: solid 1px black; border-radius: 15px;">
+      <div class="row" >
 
-<div class="col-md-2" >
+        <!------------------------------------------------------------------------- Perfil de Usuario       ------------------------------------------------------------->
+          <div class="col-12 col-md-2 text-center mb-2 mb-md-0" style="border-right:dashed 1px black;">
+            <input type="text" class="form-control text-center id="alias" placeholder="Tu Alias" value="Seviniesta">
+
+              <select class="form-select text-center" id="codigo_pais" name="codigo_pais">
+                <option selected value="+34">España (+34)</option>
+                <option value="+1">Estados Unidos (+1)</option>
+                <option value="+44">Reino Unido (+44)</option>
+                <option value="+33">Francia (+33)</option>
+                <option value="+49">Alemania (+49)</option>
+                <option value="+81">Japón (+81)</option>
+                <option value="+61">Australia (+61)</option>
+                <option value="+86">China (+86)</option>
+                <option value="+91">India (+91)</option>
+                
+              </select>
+
+              <input type="tel" class="form-control text-center" id="telefono" placeholder="Tu Móvil">
+
+            
+            
+              <img class="img-fluid rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTghNd_zkeIgHe0ovHtni8xq8XQ1suhB2Eczg&usqp=CAU" alt="Descripción de la imagen">
+
+            
 
 
-  <label for="tipoContacto" class="form-label">Otras maneras de Contactar&nbsp; &nbsp;<i class="bi bi-envelope-plus"></i> &nbsp;<i class="bi bi-whatsapp"></i>  &nbsp;<i class="bi bi-instagram"></i>&nbsp;<i class="bi bi-telephone-plus-fill"></i> </label>
+
+<!------------------------------------------------------- DATOS EXTRAS ACORDEÓN  -->
+
+
+              <div class="accordion accordion-flush" id="">
+
+                                              <!-- ACORDEÓN  MAS DATOS SOBRE TI -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Mas datos sobre ti
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      
+                      <label for="nombreApellido" class="form-label">Nombre y Apellidos</label> <input type="text" class="form-control" id="nombreApellido" placeholder="Tu Nombre y Apellidos">
+
+
+
+                      <label for="tipoContacto" class="form-label">Otras maneras de Contactar&nbsp; &nbsp;<i class="bi bi-envelope-plus"></i> &nbsp;<i class="bi bi-whatsapp"></i>  &nbsp;<i class="bi bi-instagram"></i>&nbsp;<i class="bi bi-telephone-plus-fill"></i> </label>
                                             <select class="form-select" id="select_tipoContacto">
                                               <option selected>Selecciona tipo de contacto</option>
                                               <option value="email">Email</option>
@@ -66,25 +171,129 @@
                                               <option value="instagram">Instagram</option>
                                               <option value="otroTelefono">Otro Teléfono</option>
                                             </select>
+                                            <label for="detalleContacto" class="form-label">Pon tu, mail, numero whatsApp, instagram , segundo telefono....</label>
+                                            <input type="text" class="form-control" id="id_nuevo_contacto" placeholder="">
                                             
+                    
 
-</div>
+                      
+                      </div>
+                  </div>
+                </div>
+
+                                              <!-- ACORDEÓN  TU UBICACIÓN-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Tu ubicacion
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                  </div>
+                </div>
+
+                                              <!-- ACORDEÓN  TU DISPONIBILIDAD-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Tu disponibilidad
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                  </div>
+                </div>
+              </div>
 
 
-<div class="col-md-2" >
-
-  <label for="detalleContacto" class="form-label">Escribe el mail ,  instagram etc..</label>
-  <input type="text" class="form-control" id="id_nuevo_contacto" placeholder=" mail, numero whatsApp, instagram , segundo telefono">
-
-
-</div>
 
 
 
 
 
-</div>
+<!------------------------------------------------------- FIN DATOS EXTRAS ACORDEÓN  -->
 
+
+
+
+
+
+
+          </div>
+
+
+
+        <!------------------------------------------------------------------------- Perfil de Ofertas      ------------------------------------------------------------->
+    
+
+
+          <div class="col-12 col-md-5"   style="border-right:dashed 1px black;" >
+            <h5 class="text-center">Tus Ofertas</h5>
+
+                  <label for="text_detalleHabilidad" class="form-label">Detalle tu habilidad</label>
+                              <textarea class="form-control" id="text_detalleHabilidad" placeholder="Comparte una habilidad que tengas y que beneficie a la comunidad. No es necesario ser experto, ¡lo importante es disfrutarlo y que sea útil para otros!"></textarea>
+
+                        <label for="select_nivel" class="form-label">¿Cuál es tu nivel?</label>
+                              
+                              <select class="form-select" id="select_nivel">
+                              <option selected>Selecciona Nivel</option>
+                              <option value="principiante">Principiante</option>
+                              <option value="tablas">Con Tablas</option>
+                              <option value="experto">Experto</option>
+                              </select>
+              
+              <label for="select_modalidad" class="form-label">¿Cómo realizarías tu trabajo?, remoto, presencial o ambos..</label>
+                              <select class="form-select" id="select_modalidad">
+                              <option selected>Selecciona la modalidad</option>
+                              <option value="Remoto">Remoto</option>
+                              <option value="Presencial">Presencial</option>
+                              <option value="Remoto y Presencial">Ambas</option>
+                              </select>
+              
+          </div>
+
+
+
+        <!------------------------------------------------------------------------- Perfil de Demamnda      ------------------------------------------------------------->
+
+
+
+          <div class="col-12 col-md-5">
+            <h5 class="text-center">Tus Demandas</h5>
+
+            <label for="text_detalleHabilidad" class="form-label">Solita un Miembro de la comunidad que te pueda ayudar</label>
+            <textarea class="form-control" id="id_demandaHabilidad" placeholder="Describe que tipo de habilidad o servicio neceesitas para cubrir tu ncesidad"></textarea>
+
+      <label for="select_nivel" class="form-label">¿Que nivel de experiencia requieres que tenga el miembro de la comunidad que realizara el servicio?</label>
+            
+            <select class="form-select" id="select_nivel">
+            <option selected>Selecciona Nivel</option>
+            <option value="principiante">Principiante</option>
+            <option value="tablas">Con Tablas</option>
+            <option value="experto">Experto</option>
+            </select>
+
+<label for="select_modalidad" class="form-label">¿Necesitas el servicio, presencial, Remoto  o ambos?</label>
+
+
+            <select class="form-select" id="select_modalidad">
+            <option selected>Selecciona la modalidad</option>
+            <option value="Remoto">Remoto</option>
+            <option value="Presencial">Presencial</option>
+            <option value="Remoto y Presencial">Ambas</option>
+            </select>
+          
+
+
+          </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
 
 
 
@@ -562,7 +771,32 @@ const id_btn_add_disponibilidad=`<button class="btn btn-primary" type="button"  
 
 
 
+<script>
+if ("geolocation" in navigator) {
+  // El navegador soporta geolocalización
+  navigator.geolocation.getCurrentPosition(function(position) {
+    // Success callback
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
 
+    // Aquí puedes hacer lo que quieras con la ubicación, por ejemplo:
+    console.log("Latitud:", latitude);
+    console.log("Longitud:", longitude);
+
+    // Puedes, por ejemplo, actualizar un campo en tu página web con la ubicación
+    document.getElementById("ubicacion").innerHTML = "Latitud: " + latitude + "<br>Longitud: " + longitude;
+  }, function(error) {
+    // Error callback
+    console.error("Error al obtener la ubicación:", error);
+  });
+} else {
+  // El navegador no soporta geolocalización
+  console.log("Geolocalización no soportada en este navegador.");
+}
+
+
+
+</script>
 
 
 </body>
