@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    
     <title>Interface Utopiahome</title>
 
     <style>
@@ -21,8 +23,32 @@
 body{
     font-size: 100%;
     list-style-type: none;
-    margin:8px 8px 0 8px;
+    margin:8px  0 8px 0;
 }
+
+
+.boton{
+    
+    border-radius: 5px 15px ;
+    border:solid 1px black;
+    padding:5px;
+    border: dashed 1px white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  
+      }
+
+    .boton_datos_no_obligatirios{background-color:#D9D9D9;}
+    
+.boton:hover{ 
+    
+    color:red;
+    border:solid 1px rgb(255, 2, 2);
+    font-size: 102%;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px rgba(224, 6, 126, 0.3);
+
+}
+
     </style>
 </head>
 <body>
@@ -30,30 +56,45 @@ body{
 
 <!-- ############################################################# CABECERA ###########################################################################-->
 
-    <div class="container " style="border: solid 1px black; border-radius: 15px; height: 40h; "  >
+    <div class="container " style="  border-radius: 15px; height: 45h; background-color:#D9D9D9;"  >
         
-        <div class="row" style="height: 5vh; border:solid 1px black; display: flex; align-items: center;  justify-content: center;" > <div class="col-12 text-center"> cabecera vacia </div></div>
+        <div  style="height:5vh;  display: flex; align-items: center;  justify-content: center;" > <div><img src="logo.png" alt=""  style="max-height:5vh; width: auto;"></div> <div > <h3 style="margin-left: 2vh;  letter-spacing:1hv;" >HABITRUEQUE</h3> </div></div>
 
 
 
 
 
-        <div class="row"  style="height:30vh; padding: 8px;" > 
+        <div class="row"  style="height:35vh; padding: 6px;" > 
             
             
-            <div class="col-6 text-center px-2" style="border: solid 1px red;  display: flex; align-items: center;  justify-content: center; flex-direction: column; border-radius: 15px; " >
+            <div class="col-6 text-center px-1" style="border: solid 1px black; display: flex; align-items: center;  justify-content: center; flex-direction: column; border-radius: 15px; background-color:#BEBB8F;" >
             
-                <input type="tel" class="form-control text-center" id="telefono" placeholder="Tu Móvil">
+                <input type="tel" class="form-control text-center" style="background-color:#EBE6AF;" id="telefono" placeholder="Tu Móvil">
 
-            <img class="img-fluid rounded "  style="max-height: 90px;"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTghNd_zkeIgHe0ovHtni8xq8XQ1suhB2Eczg&usqp=CAU" alt="Descripción de la imagen"  >
-            <input type="text" class="form-control text-center" id="alias" placeholder="Tu Alias">
+            <img class="img-fluid rounded "  style="max-height: 120px; padding: 2% 0 2% 0;"  src="https://w7.pngwing.com/pngs/328/599/png-transparent-male-avatar-user-profile-profile-heroes-necktie-recruiter-thumbnail.png" alt="Descripción de la imagen"  >
+            <input type="text" class="form-control text-center" style="margin-bottom: 4%; background-color:#EBE6AF;" id="alias" placeholder="Tu Alias">
 
-<p> Más Información</p>
+<div class="boton boton_datos_no_obligatirios"> Más sobre mi</div>
 
             </div>  
-                      
-    
-            <div class="col-6 text-center px-2"  style=" display: flex; align-items: center;  justify-content: center; border:solid 1px blue; border-radius: 15px;"> alias </div>  
+
+
+
+
+            <div class="col-6 text-center px-1"  style="border: solid 1px black; display: flex; align-items: center;  justify-content: center;  border-radius: 15px; background-color: #23F6D0;"> 
+        
+    <!-- BOTONES MAS INFORMACIÓN PERSONAL-->   
+       
+            <div class="row text-center" style="position: relative;">
+                <center><span style="position: absolute; top:-5vh; right: 3vh; background-color: white; width:7%; border-radius: 20px;">X</span></center> 
+               <div class="col-12 mb-2"> <div class="boton boton_datos_no_obligatirios" >Datos Personales</div>  </div>         
+               <div class="col-12 mb-2"> <div class="boton boton_datos_no_obligatirios"  >Mi Ubicación</div> </div>
+               <div class="col-12 mb-2"> <div class="boton boton_datos_no_obligatirios" >Mi disponibilidad</div> </div>
+               <div class="col-12"> <div class="boton boton_datos_no_obligatirios"  >Mis anexos</div> </div>
+            </div>
+    <!-- FIN BOTONES MAS INFORMACIÓN PERSONAL-->      
+            
+            </div>  
 
 
         </div>
@@ -61,9 +102,11 @@ body{
 
 
 
-        <div class="row"   style="height:5vh;"> <div class="col-12 text-center"  style=" display: flex; align-items: center;  justify-content: center; padding-bottom: 5px; border:solid 1px black;" >
-            <button type="button" class="btn btn-primary btn-sm"  data-bs-toggle="offcanvas" data-bs-target="#modal_mis_ofertas" aria-controls="modal_mis_ofertas"  >Mis Ofertas</button>&nbsp;&nbsp;
-            <button type="button" class="btn btn-secondary btn-sm"    data-bs-toggle="offcanvas" data-bs-target="#modal_mis_necesidades" aria-controls="modal_mis_necesidades" >Mis necesidades</button>
+        <div class="row"   style="height:5vh;"> <div class="col-12 text-center"  style=" display: flex; align-items: center;  justify-content: center; padding-bottom: 5px;" >
+            
+            <div class="boton boton_datos_no_obligatirios" style="background-color: #36DFEA; border: 1px dashed blue;"> Lo que ofrezco</div> &nbsp;&nbsp;
+            <div class="boton"  style="background-color: #41C2C2; "> Lo que Necesito</div>
+        
         </div></div>
 
     </div>
