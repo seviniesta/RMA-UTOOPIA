@@ -37,7 +37,7 @@ body{
   
       }
 
-    .boton_datos_no_obligatirios{background-color:#D9D9D9;}
+    .boton_datos_no_obligatirios{background-color:#D9D9D9;  }
     
 .boton:hover{ 
     
@@ -53,14 +53,13 @@ body{
 </head>
 <body>
 
+ 
 
 <!-- ############################################################# CABECERA ###########################################################################-->
 
     <div class="container " style="  border-radius: 15px; height: 45h; background-color:#D9D9D9;"  >
         
-        <div  style="height:5vh;  display: flex; align-items: center;  justify-content: center;" > <div><img src="logo.png" alt=""  style="max-height:5vh; width: auto;"></div> <div > <h3 style="margin-left: 2vh;  letter-spacing:1hv;" >HABITRUEQUE</h3> </div></div>
-
-
+        <div  style="height:5vh;  display: flex; align-items: center;  justify-content: center;  padding-top: calc(0.7vh);" > <div><img src="logo.png" alt=""  style="max-height:5vh; width: auto;  "></div> <div > <h3 style="margin-left: 2vh;  letter-spacing:1hv;" >HABITRUEQUE</h3> </div></div>
 
 
 
@@ -74,23 +73,39 @@ body{
             <img class="img-fluid rounded "  style="max-height: 120px; padding: 2% 0 2% 0;"  src="https://w7.pngwing.com/pngs/328/599/png-transparent-male-avatar-user-profile-profile-heroes-necktie-recruiter-thumbnail.png" alt="Descripción de la imagen"  >
             <input type="text" class="form-control text-center" style="margin-bottom: 4%; background-color:#EBE6AF;" id="alias" placeholder="Tu Alias">
 
-<div class="boton boton_datos_no_obligatirios"> Más sobre mi</div>
+
+
+    
+<button onclick="muestra_esconde('cabecera_container_no_obligatirios')"   class="boton boton_datos_no_obligatirios"  type="button" >Más sobre mi</button>
+
 
             </div>  
 
-
+      
 
 
             <div class="col-6 text-center px-1"  style="border: solid 1px black; display: flex; align-items: center;  justify-content: center;  border-radius: 15px; background-color: #23F6D0;"> 
         
     <!-- BOTONES MAS INFORMACIÓN PERSONAL-->   
        
-            <div class="row text-center" style="position: relative;">
-                <center><span style="position: absolute; top:-5vh; right: 3vh; background-color: white; width:7%; border-radius: 20px;">X</span></center> 
-               <div class="col-12 mb-2"> <div class="boton boton_datos_no_obligatirios" >Datos Personales</div>  </div>         
-               <div class="col-12 mb-2"> <div class="boton boton_datos_no_obligatirios"  >Mi Ubicación</div> </div>
-               <div class="col-12 mb-2"> <div class="boton boton_datos_no_obligatirios" >Mi disponibilidad</div> </div>
-               <div class="col-12"> <div class="boton boton_datos_no_obligatirios"  >Mis anexos</div> </div>
+            <div class="row text-center"  id="cabecera_container_no_obligatirios">
+             <div class="col-9 mb-5" ></div>
+              <div class="col-3 mb-5" onclick="muestra_esconde('cabecera_container_no_obligatirios')" style="background-color: white; border-radius: 20px; cursor: pointer; width:4vw;"> 
+               <center>X</center>
+              </div>
+               <div class="col-12 mb-2"> 
+                  <button class="boton boton_datos_no_obligatirios"  type="button" data-bs-toggle="offcanvas" data-bs-target="#ModalDatosPersonales" aria-controls="ModalDatosPersonales" >Datos Personales </button>
+            </div>         
+               <div class="col-12 mb-2"> 
+                <button class="boton boton_datos_no_obligatirios"  type="button" data-bs-toggle="offcanvas" data-bs-target="#ModalMiUbicacion" aria-controls="ModalMiUbicacion">Mi Ubicación </button>
+              </div>
+               <div class="col-12 mb-2">
+                <button class="boton boton_datos_no_obligatirios"  type="button" data-bs-toggle="offcanvas" data-bs-target="#ModalDisponibilidad" aria-controls="ModalDisponibilidad">Mi disponibilidad</button>
+                        
+              </div>
+               <div class="col-12"> 
+                <button class="boton boton_datos_no_obligatirios"  type="button" data-bs-toggle="offcanvas" data-bs-target="#ModalMisAnexos"" aria-controls="ModalMisAnexos">Mis Anexos</button>
+               </div>
             </div>
     <!-- FIN BOTONES MAS INFORMACIÓN PERSONAL-->      
             
@@ -112,6 +127,274 @@ body{
     </div>
 
     <!-- ############################################################# FIN CABECERA ###########################################################################-->
+
+
+    <!-- ############################################################# MODALES PERSONALES ###########################################################################-->
+
+    <!--------------   Modal  Datos Datos Personales-------------->
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="ModalDatosPersonales" aria-labelledby="ModalDatosPersonales">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
+            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0m2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755"/>
+          </svg> Más datos sobre mi
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <label for="tipoContacto" class="form-label">Otras maneras de Contactar contigo&nbsp; &nbsp;<i class="bi bi-envelope-plus"></i> &nbsp;<i class="bi bi-whatsapp"></i>  &nbsp;<i class="bi bi-instagram"></i>&nbsp;<i class="bi bi-telephone-plus-fill"></i></label>
+          <br>
+          <select class="form-select mt-2" id="select_tipoContacto">
+            <option selected>Selecciona tipo de contacto</option>
+            <option value="email">Email</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="instagram">Instagram</option>
+            <option value="otroTelefono">Otro Teléfono</option>
+          </select>
+          <br>
+          <label for="detalleContacto" class="form-label">Pon tu, mail, numero whatsApp, instagram, segundo telefono....</label>
+          <input type="text" class="form-control" id="id_nuevo_contacto" placeholder="">
+          <br>
+          <button class="btn btn-primary" id="id_btn_add_contacto" type="button">+ Añade otro contacto</button>
+          <br><br>
+          <hr style="border:dashed 1px black;">
+          <label for="nombreApellido" class="form-label">Nombre y Apellidos</label>
+          <input type="text" class="form-control" id="NombreApellido" placeholder="Tu Nombre y Apellidos">
+          <label for="nombreApellido" class="form-label mt-4">Documento de Identidad</label>
+          <input type="text" class="form-control" id="idDocumendoId" placeholder="DNI. NIE. Pasaporte">
+          <br>
+        </div>
+      </div>
+    </div>
+    
+
+
+ <!--------------   Modal  Mi Ubicación -------------->
+
+  
+
+ <div class="offcanvas offcanvas-start" tabindex="-1" id="ModalMiUbicacion" aria-lbelledby="ModalMiUbicacion">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id=""><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-house-add" viewBox="0 0 16 16">
+      <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h4a.5.5 0 1 0 0-1h-4a.5.5 0 0 1-.5-.5V7.207l5-5 6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+      <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 1 0 1 0v-1h1a.5.5 0 1 0 0-1h-1v-1a.5.5 0 0 0-.5-.5"/>
+    </svg> Mi Ubicación</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+     
+    
+
+        <div class="row">
+            
+            <div class="col-sm-9 col-12">
+        
+            <label for="direccion" class="form-label">Calle Avenida,Plaza etc..</label>
+            <input type="text" class="form-control" id="direccion" placeholder="Tu Dirección">
+            </div>
+
+            <div class="col-sm-3 col-3">
+                      <label for="numero" class="form-label">Número</label>
+                      <input type="text" class="form-control" id="numero" placeholder="Número">
+            </div>
+    
+            <div class="col-sm-4 col-3">
+        
+              <label for="portal" class="form-label">Portal</label>
+              <input type="text" class="form-control" id="portal" placeholder="Portal">
+            </div>
+      
+            <div class="col-sm-4 col-3">
+          
+              <label for="planta" class="form-label">Planta</label>
+              <input type="text" class="form-control" id="planta" placeholder="Planta">
+            
+              </div>
+      
+              <div class="col-sm-4 col-3">
+          
+              <label for="puerta" class="form-label">Puerta</label>
+              <input type="text" class="form-control" id="puerta" placeholder="Puerta">
+            </div>
+    
+            <div class="col-sm-8">
+              <label for="poblacion" class="form-label">Población</label>
+              <input type="text" class="form-control" id="poblacion" placeholder="Tu Población">
+            </div>
+
+            <div class="col-sm-4">
+              <label for="codigoPostal" class="form-label">Código Postal</label>
+              <input type="text" class="form-control" id="codigoPostal" placeholder="C.P">
+            </div>
+
+              <div class="col-sm-6">
+                <label for="pais" class="form-label">Provincia</label>
+                <input type="text" class="form-control" id="pais" placeholder="Provincia">
+              </div>
+
+              <div          class="col-sm-6">
+                <label for="pais" class="form-label">País</label>
+                <input type="text" class="form-control" id="pais" placeholder="Tu País">
+              </div>
+
+            </div>
+
+
+
+
+
+
+
+    </div>
+  
+  </div>
+</div>
+
+ <!--------------   Modal  Mi disponibilidad -------------->
+
+
+
+ <div class="offcanvas offcanvas-start" tabindex="-1" id="ModalDisponibilidad" aria-labelledby="ModalDisponibilidad">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id=""><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+    </svg>Mi Disponibilidad    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+
+
+        <select class="form-select" aria-label="Default select example" id="select_dia_semana_desde" >
+          <option selected>Desde el dia:</option>
+          <option value="Lunes">Desde el Lunes</option>
+          <option value="Martes">Desde el Martes</option>
+          <option value="Miercoles">Desde el Miercoles</option>
+          <option value="Jueves">Desde el Jueves</option>
+          <option value="Viernes">Desde el Viernes</option>
+          <option value="Sabado">Desde el Sabado</option>
+          <option value="Domingo">Desde el Domingo</option>
+        </select> 
+  
+
+        <select class="form-select" aria-label="Default select example" id="select_dia_semana_hasta"  >
+          <option selected>Hasta el dia:</option>
+          <option value="Lunes">Hasta el Lunes</option>
+          <option value="Martes">Hasta el Martes</option>
+          <option value="Miercoles">Hasta el  Miercoles</option>
+          <option value="Jueves">Hasta el Jueves</option>
+          <option value="Viernes">Hasta el Viernes</option>
+          <option value="Sabado">Hasta el Sabado</option>
+          <option value="Domingo">Hasta el Domingo</option>
+        </select>
+
+      <div class="row mt-4">
+
+      <div class="col-6 mb-4"> <input type="number" id="desde_hora" class="form-control" placeholder="Desde Hora:"> </div> 
+      <div class="col-6 mb-4"><input type="number" id="desde_minutos" class="form-control" placeholder="Minutos"> </div> 
+
+      <div class="col-6 mb-4"><input type="number" id="hasta_hora" class="form-control" placeholder="Hasta Hora:"></div> 
+      <div class="col-6 mb-4"><input type="number" id="hasta_minutos" class="form-control" placeholder="Minutos"> </div> 
+    </div> 
+
+
+    <button class="btn btn-primary mt-4" type="button"  id="id_btn_add_disponibilidad" >+ Añade Horario Disponible</button>
+
+      
+
+
+    </div>
+    
+
+  
+  </div>
+</div>
+
+<!--------------   Modal  Mis Anexos -------------->
+
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="ModalMisAnexos" aria-labelledby="ModalMisAnexos">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-file-arrow-up" viewBox="0 0 16 16">
+        <path d="M8 11a.5.5 0 0 0 .5-.5V6.707l1.146 1.147a.5.5 0 0 0 .708-.708l-2-2a.5.5 0 0 0-.708 0l-2 2a.5.5 0 1 0 .708.708L7.5 6.707V10.5a.5.5 0 0 0 .5.5"/>
+        <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"/>
+      </svg>
+      Mis Anexos</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+  
+
+
+
+      <div class="row text-center">
+        <div class="col-md-8 mb-2">
+            <input type="text" aria-label="Last name" id="value_Nombre_ficheroAdjunto" class="form-control" placeholder="Nombre del adjunto" >
+        </div>
+
+<div class="col-md-4 mb-2">
+    <input type="file" class="form-control" id="value_ficheroAdjunto" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+</div>
+
+<div class="col-md-12 mb-2">
+      <button class="btn btn-primary" type="button" id="id_bnt_fichero_adjunto">+ Adjuntar Fichero</button> 
+</div>
+
+<div class="col-md-12 mt-2" id="id_contenedor_fichero_adjunto">   </div>
+
+</div>
+
+
+
+
+    </div>
+  
+  </div>
+</div>
+
+
+
+    <!-- ############################################################ FIN MODALES PERSONALES ###########################################################################-->
+
+
+
+
+
+<!-- libreria para modales-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"     crossorigin="anonymous"></script>
+
+
+
+
+<script>
+
+//Funciones Genericas
+
+const muestra_esconde=(id)=>{  
+
+  var element = document.getElementById(id);
+    if (element.style.display === "none") {
+        // Si el elemento está oculto, mostrarlo
+        element.style.display = "flex";
+    } else {
+        // Si el elemento está visible, ocultarlo
+        element.style.display = "none";
+    }
+
+
+}
+
+
+</script>
+
+
 
 
 </body>
