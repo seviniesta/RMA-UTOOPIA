@@ -1,275 +1,297 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    
-    <title>Interface Utopiahome</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
 
-    <style>
-        *, 
-*:after,
-*:before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-body{
-    font-size: 100%;
-    list-style-type: none;
-    margin:8px  0 8px 0;
-}
+  <title>Interface Utopiahome</title>
 
-
-.boton{
-    
-    border-radius: 5px 15px ;
-    border:solid 1px black;
-    padding:5px;
-    border: dashed 1px white;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  
-      }
-
-    .boton_datos_no_obligatirios{background-color:#D9D9D9;  }
-    
-.boton:hover{ 
-    
-    color:red;
-    border:solid 1px rgb(255, 2, 2);
-    font-size: 102%;
-    cursor: pointer;
-    box-shadow: 4px 4px 4px rgba(224, 6, 126, 0.3);
-
-}
-
-    </style>
+  <link rel="icon" type="image/x-icon" href="logo.png">
 </head>
+
 <body>
 
- 
 
-<!-- ############################################################# CABECERA ###########################################################################-->
+  <header class="container" style="  border-radius: 15px; height: 50h; background-color:#95B1B0; padding: 1vh;">
 
-    <div class="container " style="  border-radius: 15px; height: 45h; background-color:#D9D9D9;"  >
-        
-        <div  style="height:5vh;  display: flex; align-items: center;  justify-content: center;  padding-top: calc(0.7vh);" > <div><img src="logo.png" alt=""  style="max-height:5vh; width: auto;  "></div> <div > <h3 style="margin-left: 2vh;  letter-spacing:1hv;" >HABITRUEQUE</h3> </div></div>
-
-
-
-        <div class="row"  style="height:35vh; padding: 6px;" > 
-            
-            
-            <div class="col-6 text-center px-1" style="border: solid 1px black; display: flex; align-items: center;  justify-content: center; flex-direction: column; border-radius: 15px; background-color:#BEBB8F;" >
-            
-                <input type="tel" class="form-control text-center" style="background-color:#EBE6AF;" id="telefono" placeholder="Tu Móvil">
-
-            <img class="img-fluid rounded "  style="max-height: 120px; padding: 2% 0 2% 0;"  src="https://w7.pngwing.com/pngs/328/599/png-transparent-male-avatar-user-profile-profile-heroes-necktie-recruiter-thumbnail.png" alt="Descripción de la imagen"  >
-            <input type="text" class="form-control text-center" style="margin-bottom: 4%; background-color:#EBE6AF;" id="alias" placeholder="Tu Alias">
-
-
-
-    
-<button onclick="muestra_esconde('cabecera_container_no_obligatirios')"   class="boton boton_datos_no_obligatirios"  type="button" >Más sobre mi</button>
-
-
-            </div>  
-
-      
-
-            <div class="col-6 text-center px-1"  style="border: solid 1px black; display: flex; align-items: center;  justify-content: center;  border-radius: 15px; background-color: #23F6D0;"> 
-        
-    <!-- BOTONES MAS INFORMACIÓN PERSONAL-->   
-       
-            <div class="row text-center"  id="cabecera_container_no_obligatirios">
-             <div class="col-9 mb-4" ></div>
-              <div class="col-2 mb-4 boton_datos_no_obligatirios" onclick="muestra_esconde('cabecera_container_no_obligatirios')" style="cursor: pointer; border-radius: 20px;  margin-top: 1vh; border:dashed 1px black;"> 
-               <center>X</center>
-              </div>
-             
-
-               <div class="col-12 mb-2"> 
-                  <button class="boton boton_datos_no_obligatirios"  type="button" data-bs-toggle="offcanvas" data-bs-target="#ModalDatosPersonales" aria-controls="ModalDatosPersonales" >Datos Personales </button>
-            </div>         
-               <div class="col-12 mb-2"> 
-                <button class="boton boton_datos_no_obligatirios"  type="button" data-bs-toggle="offcanvas" data-bs-target="#ModalMiUbicacion" aria-controls="ModalMiUbicacion">Mi Ubicación </button>
-              </div>
-               <div class="col-12 mb-2">
-                <button class="boton boton_datos_no_obligatirios"  type="button" data-bs-toggle="offcanvas" data-bs-target="#ModalDisponibilidad" aria-controls="ModalDisponibilidad">Mi disponibilidad</button>
-                        
-              </div>
-               <div class="col-12"> 
-                <button class="boton boton_datos_no_obligatirios"  type="button" data-bs-toggle="offcanvas" data-bs-target="#ModalMisAnexos"" aria-controls="ModalMisAnexos">Mis Anexos</button>
-               </div>
-            </div>
-    <!-- FIN BOTONES MAS INFORMACIÓN PERSONAL-->      
-            
-            </div>  
-
-
-        </div>
-
-
-
-
-        <div class="row"   style="height:5vh;"> <div class="col-12 text-center"  style=" display: flex; align-items: center;  justify-content: center; padding-bottom: 5px;" >
-            
-            <div class="boton boton_datos_no_obligatirios" style="background-color: #36DFEA; border: 1px dashed blue;"> Lo que ofrezco</div> &nbsp;&nbsp;
-            <div class="boton"  style="background-color: #41C2C2; "> Lo que Necesito</div>
-        
-        </div></div>
-
-    </div>
-
-    <!-- ############################################################# FIN CABECERA ###########################################################################-->
-
-
-    <!-- ############################################################# MODALES PERSONALES ###########################################################################-->
-
-    <!--------------   Modal  Datos Datos Personales-------------->
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="ModalDatosPersonales" aria-labelledby="ModalDatosPersonales">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
-            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0m2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755"/>
-          </svg> Más datos sobre mi
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div>
-          <label for="tipoContacto" class="form-label">Otras maneras de Contactar contigo&nbsp; &nbsp;<i class="bi bi-envelope-plus"></i> &nbsp;<i class="bi bi-whatsapp"></i>  &nbsp;<i class="bi bi-instagram"></i>&nbsp;<i class="bi bi-telephone-plus-fill"></i></label>
-          <br>
-          <select class="form-select mt-2" id="select_tipoContacto">
-            <option selected>Selecciona tipo de contacto</option>
-            <option value="email">Email</option>
-            <option value="whatsapp">WhatsApp</option>
-            <option value="instagram">Instagram</option>
-            <option value="otroTelefono">Otro Teléfono</option>
-          </select>
-          <br>
-          <label for="detalleContacto" class="form-label">Pon tu, mail, numero whatsApp, instagram, segundo telefono....</label>
-          <input type="text" class="form-control" id="id_nuevo_contacto" placeholder="">
-          <br>
-          <button class="btn btn-primary" id="id_btn_add_contacto" type="button">+ Añade otro contacto</button>
-          <br><br>
-          <hr style="border:dashed 1px black;">
-          <label for="nombreApellido" class="form-label">Nombre y Apellidos</label>
-          <input type="text" class="form-control" id="NombreApellido" placeholder="Tu Nombre y Apellidos">
-          <label for="nombreApellido" class="form-label mt-4">Documento de Identidad</label>
-          <input type="text" class="form-control" id="idDocumendoId" placeholder="DNI. NIE. Pasaporte">
-          <br>
-        </div>
+    <!--TITULO LOGO-->
+    <div id="logo">
+      <div><img src="logo.png" alt="" style="max-height:5vh; width: auto;  "></div>
+      <div>
+        <h3 style="margin-left: 2vh;  letter-spacing:1hv;">HABITRUEQUE</h3>
       </div>
     </div>
-    
+
+    <!-- FIN TITULO LOGO-->
+
+    <!-- ROW PANTALLA-->
+
+    <div id="pantalla" class="row text-center">
+
+      <!-- columna derecha datos personales-->
+      <div class="col-6" style=" background-color:#324B4B;  border-radius: 15px;">
+        <!--  <input type="tel" class="form-control text-center mt-2" style="background-color:#EBE6AF;" id="telefono"
+          placeholder="Tu Móvil"> -->
+        <button class="boton boton_datos_no_obligatirios my-2" style="font-size:83.3%;" type="button"
+          data-bs-toggle="offcanvas" data-bs-target="#ModalDatosPersonales" aria-controls="ModalDatosPersonales">Datos
+          Personales * </button><br>
+
+        <img class="img-fluid rounded " style="max-height: 120px; padding: 2% 0 2% 0; "
+          src="https://w7.pngwing.com/pngs/328/599/png-transparent-male-avatar-user-profile-profile-heroes-necktie-recruiter-thumbnail.png"
+          alt="Descripción de la imagen">
+        <input type="text" class="form-control text-center" style="margin-bottom: 4%; color:#15DFDF;" id="alias"
+          placeholder="Tu Alias">
+        <button onclick="muestra_esconde('cabecera_container_no_obligatirios')" style="font-size:83.3%;"
+          class="boton boton_datos_no_obligatirios" type="button">Más sobre mi</button>
+      </div> <!-- fin columna derecha datos personales-->
 
 
- <!--------------   Modal  Mi Ubicación -------------->
 
-  
+      <!-- columna izquierda pantalla-->
+      <div class="col-6" style=" border-radius: 15px; background-color: #15DFDF;">
 
- <div class="offcanvas offcanvas-start" tabindex="-1" id="ModalMiUbicacion" aria-lbelledby="ModalMiUbicacion">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id=""><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-house-add" viewBox="0 0 16 16">
-      <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h4a.5.5 0 1 0 0-1h-4a.5.5 0 0 1-.5-.5V7.207l5-5 6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-      <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 1 0 1 0v-1h1a.5.5 0 1 0 0-1h-1v-1a.5.5 0 0 0-.5-.5"/>
-    </svg> Mi Ubicación</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+
+        <!-- BOTONES MAS INFORMACIÓN PERSONAL-->
+
+        <div class="row text-center" id="cabecera_container_no_obligatirios">
+          <div class="col-9 mb-4"></div>
+          <div class="col-2 mb-4 boton_datos_no_obligatirios"
+            onclick="muestra_esconde('cabecera_container_no_obligatirios')"
+            style="cursor: pointer; border-radius: 20px;  margin-top: 1vh; border:dashed 1px black;">
+            <center>X</center>
+          </div>
+
+
+          <div class="col-12 mb-2">
+            <button class="boton boton_datos_no_obligatirios" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#ModalMiUbicacion" aria-controls="ModalMiUbicacion">Mi Ubicación </button>
+          </div>
+          <div class="col-12 mb-2">
+            <button class="boton boton_datos_no_obligatirios" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#ModalDisponibilidad" aria-controls="ModalDisponibilidad">Mi disponibilidad</button>
+
+          </div>
+          <div class="col-12">
+            <button class="boton boton_datos_no_obligatirios" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#ModalMisAnexos"" aria-controls=" ModalMisAnexos">Mis Anexos</button>
+          </div>
+        </div>
+        <!-- FIN BOTONES MAS INFORMACIÓN PERSONAL-->
+
+
+
+
+      </div> <!-- fin columna izquierda pantalla-->
+
+    </div> <!--FIN ROW PANTALLA-->
+
+
+  </header>
+
+
+  <!-- MENU PRINCIPAL OFERTA Y DEMANDA -->
+  <div class="container">
+    <div class="row text-center px-1 pt-1" style="height:5vh;">
+
+      <div id="loQueOfrezco" class="col-5 d-flex align-items-center justify-content-center boton"
+        style="border:solid 1px black; border-radius:15px 8px 0 0; background-color: #AEC3FF; border: 1px dashed blue; font-size:86%;">
+        Lo que ofrezco</div>
+      <div id="agregarYfiltrar" class="col-2 d-flex align-items-center justify-content-center boton"
+      style=" font-weight: bold; border-top:solid 1px  black;  border-radius:12px 8px 0 0;  border: 1px solid black; font-size:100%;"> + </div>
+      <div  id="loQueNecesito" class="col-5 d-flex align-items-center justify-content-center boton"
+        style="border:solid 1px black ; border-radius:15px 8px 0 0; background-color:#768DDC; font-size:86%; ">Lo que necesito</div>
+
+
+    </div> <!-- Fin Row-->
+
+  </div> <!-- Fin Countainer-->
+
+  <!-- FIN MENU PRINCIPAL OFERTA Y DEMANDA -->
+
+
+  <!-- LISTA PRINCIPAL -->
+  <div class="container" style="border: solid 1px black; height:38vh; border-radius:0 0 15px 15px;">
+
+
   </div>
-  <div class="offcanvas-body">
-    <div>
-     
-    
+
+
+
+  <!-- FIN LISTA PRINCIPAL -->
+
+  <!-- PIE  MENU -->
+  <div
+    style="background-color:#95B1B0;  border:solid 1px black; height:7vh; position: fixed; width:100%; bottom: 0; right: 0; border-radius: 20px 20px 0 0;  padding: 1vh;   display: flex;  justify-content:space-around;">
+
+
+    <img  id="pieBotonPersonal"  class="botones_pie"  src="https://pic.onlinewebfonts.com/thumbnails/icons_561912.svg">
+    <img id="pieBotonGrupo" class="botones_pie"   src="https://pic.onlinewebfonts.com/thumbnails/icons_322723.svg">
+    <img id="pieBotonMensaje" class="botones_pie"   src="https://pic.onlinewebfonts.com/thumbnails/icons_426578.svg">
+    <img  id="pieBotonConfiguracion" class="botones_pie"   src="https://pic.onlinewebfonts.com/thumbnails/icons_353022.svg">
+
+
+  </div>
+
+  <!-- FIN PIE MENU -->
+
+
+  <!-- ############################################################# MODALES PERSONALES ###########################################################################-->
+
+  <!--------------   Modal  Datos Datos Personales-------------->
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="ModalDatosPersonales" aria-labelledby="ModalDatosPersonales">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+          class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
+          <path
+            d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0m2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755" />
+        </svg> Más datos sobre mi
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <label for="tipoContacto" class="form-label">Otras maneras de Contactar contigo&nbsp; &nbsp;<i
+            class="bi bi-envelope-plus"></i> &nbsp;<i class="bi bi-whatsapp"></i> &nbsp;<i
+            class="bi bi-instagram"></i>&nbsp;<i class="bi bi-telephone-plus-fill"></i></label>
+        <br>
+        <select class="form-select mt-2" id="select_tipoContacto">
+          <option selected>Selecciona tipo de contacto</option>
+          <option value="email">Email</option>
+          <option value="whatsapp">WhatsApp</option>
+          <option value="instagram">Instagram</option>
+          <option value="otroTelefono">Otro Teléfono</option>
+        </select>
+        <br>
+        <label for="detalleContacto" class="form-label">Pon tu, mail, numero whatsApp, instagram, segundo
+          telefono....</label>
+        <input type="text" class="form-control" id="id_nuevo_contacto" placeholder="">
+        <br>
+        <button class="btn btn-primary" id="id_btn_add_contacto" type="button">+ Añade otro contacto</button>
+        <br><br>
+        <hr style="border:dashed 1px black;">
+        <label for="nombreApellido" class="form-label">Nombre y Apellidos</label>
+        <input type="text" class="form-control" id="NombreApellido" placeholder="Tu Nombre y Apellidos">
+        <label for="nombreApellido" class="form-label mt-4">Documento de Identidad</label>
+        <input type="text" class="form-control" id="idDocumendoId" placeholder="DNI. NIE. Pasaporte">
+        <br>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--------------   Modal  Mi Ubicación -------------->
+
+
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="ModalMiUbicacion" aria-lbelledby="ModalMiUbicacion">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id=""><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+          fill="currentColor" class="bi bi-house-add" viewBox="0 0 16 16">
+          <path
+            d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h4a.5.5 0 1 0 0-1h-4a.5.5 0 0 1-.5-.5V7.207l5-5 6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
+          <path
+            d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 1 0 1 0v-1h1a.5.5 0 1 0 0-1h-1v-1a.5.5 0 0 0-.5-.5" />
+        </svg> Mi Ubicación</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+
+
 
         <div class="row">
-            
-            <div class="col-sm-9 col-12">
-        
+
+          <div class="col-sm-9 col-12">
+
             <label for="direccion" class="form-label">Calle Avenida,Plaza etc..</label>
             <input type="text" class="form-control" id="direccion" placeholder="Tu Dirección">
-            </div>
+          </div>
 
-            <div class="col-sm-3 col-3">
-                      <label for="numero" class="form-label">Número</label>
-                      <input type="text" class="form-control" id="numero" placeholder="Número">
-            </div>
-    
-            <div class="col-sm-4 col-3">
-        
-              <label for="portal" class="form-label">Portal</label>
-              <input type="text" class="form-control" id="portal" placeholder="Portal">
-            </div>
-      
-            <div class="col-sm-4 col-3">
-          
-              <label for="planta" class="form-label">Planta</label>
-              <input type="text" class="form-control" id="planta" placeholder="Planta">
-            
-              </div>
-      
-              <div class="col-sm-4 col-3">
-          
-              <label for="puerta" class="form-label">Puerta</label>
-              <input type="text" class="form-control" id="puerta" placeholder="Puerta">
-            </div>
-    
-            <div class="col-sm-8">
-              <label for="poblacion" class="form-label">Población</label>
-              <input type="text" class="form-control" id="poblacion" placeholder="Tu Población">
-            </div>
+          <div class="col-sm-3 col-3">
+            <label for="numero" class="form-label">Número</label>
+            <input type="text" class="form-control" id="numero" placeholder="Número">
+          </div>
 
-            <div class="col-sm-4">
-              <label for="codigoPostal" class="form-label">Código Postal</label>
-              <input type="text" class="form-control" id="codigoPostal" placeholder="C.P">
-            </div>
+          <div class="col-sm-4 col-3">
 
-              <div class="col-sm-6">
-                <label for="pais" class="form-label">Provincia</label>
-                <input type="text" class="form-control" id="pais" placeholder="Provincia">
-              </div>
+            <label for="portal" class="form-label">Portal</label>
+            <input type="text" class="form-control" id="portal" placeholder="Portal">
+          </div>
 
-              <div          class="col-sm-6">
-                <label for="pais" class="form-label">País</label>
-                <input type="text" class="form-control" id="pais" placeholder="Tu País">
-              </div>
+          <div class="col-sm-4 col-3">
 
-            </div>
+            <label for="planta" class="form-label">Planta</label>
+            <input type="text" class="form-control" id="planta" placeholder="Planta">
 
+          </div>
 
+          <div class="col-sm-4 col-3">
+
+            <label for="puerta" class="form-label">Puerta</label>
+            <input type="text" class="form-control" id="puerta" placeholder="Puerta">
+          </div>
+
+          <div class="col-sm-8">
+            <label for="poblacion" class="form-label">Población</label>
+            <input type="text" class="form-control" id="poblacion" placeholder="Tu Población">
+          </div>
+
+          <div class="col-sm-4">
+            <label for="codigoPostal" class="form-label">Código Postal</label>
+            <input type="text" class="form-control" id="codigoPostal" placeholder="C.P">
+          </div>
+
+          <div class="col-sm-6">
+            <label for="pais" class="form-label">Provincia</label>
+            <input type="text" class="form-control" id="pais" placeholder="Provincia">
+          </div>
+
+          <div class="col-sm-6">
+            <label for="pais" class="form-label">País</label>
+            <input type="text" class="form-control" id="pais" placeholder="Tu País">
+          </div>
+
+        </div>
 
 
 
 
+
+
+
+      </div>
 
     </div>
-  
   </div>
-</div>
 
- <!--------------   Modal  Mi disponibilidad -------------->
-
+  <!--------------   Modal  Mi disponibilidad -------------->
 
 
- <div class="offcanvas offcanvas-start" tabindex="-1" id="ModalDisponibilidad" aria-labelledby="ModalDisponibilidad">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id=""><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
-      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-    </svg>Mi Disponibilidad    </h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="ModalDisponibilidad" aria-labelledby="ModalDisponibilidad">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id=""><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+          fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+          <path
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+        </svg>Mi Disponibilidad </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
 
 
-        <select class="form-select" aria-label="Default select example" id="select_dia_semana_desde" >
+        <select class="form-select" aria-label="Default select example" id="select_dia_semana_desde">
           <option selected>Desde el dia:</option>
           <option value="Lunes">Desde el Lunes</option>
           <option value="Martes">Desde el Martes</option>
@@ -278,553 +300,118 @@ body{
           <option value="Viernes">Desde el Viernes</option>
           <option value="Sabado">Desde el Sabado</option>
           <option value="Domingo">Desde el Domingo</option>
-        </select> 
-  
+        </select>
 
-        <select class="form-select" aria-label="Default select example" id="select_dia_semana_hasta"  >
+
+        <select class="form-select" aria-label="Default select example" id="select_dia_semana_hasta">
           <option selected>Hasta el dia:</option>
           <option value="Lunes">Hasta el Lunes</option>
           <option value="Martes">Hasta el Martes</option>
-          <option value="Miercoles">Hasta el  Miercoles</option>
+          <option value="Miercoles">Hasta el Miercoles</option>
           <option value="Jueves">Hasta el Jueves</option>
           <option value="Viernes">Hasta el Viernes</option>
           <option value="Sabado">Hasta el Sabado</option>
           <option value="Domingo">Hasta el Domingo</option>
         </select>
 
-      <div class="row mt-4">
+        <div class="row mt-4">
 
-      <div class="col-6 mb-4"> <input type="number" id="desde_hora" class="form-control" placeholder="Desde Hora:"> </div> 
-      <div class="col-6 mb-4"><input type="number" id="desde_minutos" class="form-control" placeholder="Minutos"> </div> 
+          <div class="col-6 mb-4"> <input type="number" id="desde_hora" class="form-control" placeholder="Desde Hora:">
+          </div>
+          <div class="col-6 mb-4"><input type="number" id="desde_minutos" class="form-control" placeholder="Minutos">
+          </div>
 
-      <div class="col-6 mb-4"><input type="number" id="hasta_hora" class="form-control" placeholder="Hasta Hora:"></div> 
-      <div class="col-6 mb-4"><input type="number" id="hasta_minutos" class="form-control" placeholder="Minutos"> </div> 
-    </div> 
-
-
-    <button class="btn btn-primary mt-4" type="button"  id="id_btn_add_disponibilidad" >+ Añade Horario Disponible</button>
-
-      
-
-
-    </div>
-    
-
-  
-  </div>
-</div>
-
-<!--------------   Modal  Mis Anexos -------------->
-
-
-
-<div class="offcanvas offcanvas-start" tabindex="-1" id="ModalMisAnexos" aria-labelledby="ModalMisAnexos">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-file-arrow-up" viewBox="0 0 16 16">
-        <path d="M8 11a.5.5 0 0 0 .5-.5V6.707l1.146 1.147a.5.5 0 0 0 .708-.708l-2-2a.5.5 0 0 0-.708 0l-2 2a.5.5 0 1 0 .708.708L7.5 6.707V10.5a.5.5 0 0 0 .5.5"/>
-        <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"/>
-      </svg>
-      Mis Anexos</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-  
-
-
-
-      <div class="row text-center">
-        <div class="col-md-8 mb-2">
-            <input type="text" aria-label="Last name" id="value_Nombre_ficheroAdjunto" class="form-control" placeholder="Nombre del adjunto" >
+          <div class="col-6 mb-4"><input type="number" id="hasta_hora" class="form-control" placeholder="Hasta Hora:">
+          </div>
+          <div class="col-6 mb-4"><input type="number" id="hasta_minutos" class="form-control" placeholder="Minutos">
+          </div>
         </div>
 
-<div class="col-md-4 mb-2">
-    <input type="file" class="form-control" id="value_ficheroAdjunto" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-</div>
 
-<div class="col-md-12 mb-2">
-      <button class="btn btn-primary" type="button" id="id_bnt_fichero_adjunto">+ Adjuntar Fichero</button> 
-</div>
+        <button class="btn btn-primary mt-4" type="button" id="id_btn_add_disponibilidad">+ Añade Horario
+          Disponible</button>
 
-<div class="col-md-12 mt-2" id="id_contenedor_fichero_adjunto">   </div>
 
-</div>
 
+
+      </div>
 
 
 
     </div>
-  
   </div>
-</div>
+
+  <!--------------   Modal  Mis Anexos -------------->
 
 
 
-    <!-- ############################################################ FIN MODALES PERSONALES ###########################################################################-->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="ModalMisAnexos" aria-labelledby="ModalMisAnexos">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-file-arrow-up"
+          viewBox="0 0 16 16">
+          <path
+            d="M8 11a.5.5 0 0 0 .5-.5V6.707l1.146 1.147a.5.5 0 0 0 .708-.708l-2-2a.5.5 0 0 0-.708 0l-2 2a.5.5 0 1 0 .708.708L7.5 6.707V10.5a.5.5 0 0 0 .5.5" />
+          <path
+            d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1" />
+        </svg>
+        Mis Anexos
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
 
 
 
 
+        <div class="row text-center">
+          <div class="col-md-8 mb-2">
+            <input type="text" aria-label="Last name" id="value_Nombre_ficheroAdjunto" class="form-control"
+              placeholder="Nombre del adjunto">
+          </div>
 
-<!-- libreria para modales-->
+          <div class="col-md-4 mb-2">
+            <input type="file" class="form-control" id="value_ficheroAdjunto" aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload">
+          </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"     crossorigin="anonymous"></script>
+          <div class="col-md-12 mb-2">
+            <button class="btn btn-primary" type="button" id="id_bnt_fichero_adjunto">+ Adjuntar Fichero</button>
+          </div>
+
+          <div class="col-md-12 mt-2" id="id_contenedor_fichero_adjunto"> </div>
+
+        </div>
 
 
 
 
-<script>
+      </div>
 
-// Variablea
+    </div>
+  </div>
 
-var codigoPaisTel=[
-  {
-    "nombre": "Alemania",
-    "codigo": "DE",
-    "indicativo": "0049"
-  },
-  {
-    "nombre": "Arabia Saudita",
-    "codigo": "SA",
-    "indicativo": "00966"
-  },
-  {
-    "nombre": "Argelia",
-    "codigo": "DZ",
-    "indicativo": "00213"
-  },
-  {
-    "nombre": "Argentina",
-    "codigo": "AR",
-    "indicativo": "0054"
-  },
-  {
-    "nombre": "Australia",
-    "codigo": "AU",
-    "indicativo": "0061"
-  },
-  {
-    "nombre": "Bahrein",
-    "codigo": "BH",
-    "indicativo": "00973"
-  },
-  {
-    "nombre": "Bangladés",
-    "codigo": "BD",
-    "indicativo": "00880"
-  },
-  {
-    "nombre": "Bélgica",
-    "codigo": "BE",
-    "indicativo": "0032"
-  },
-  {
-    "nombre": "Bolivia",
-    "codigo": "BO",
-    "indicativo": "00591"
-  },
-  {
-    "nombre": "Brasil",
-    "codigo": "BR",
-    "indicativo": "0055"
-  },
-  {
-    "nombre": "Camerún",
-    "codigo": "CM",
-    "indicativo": "00237"
-  },
-  {
-    "nombre": "Canadá",
-    "codigo": "CA",
-    "indicativo": "001"
-  },
-  {
-    "nombre": "Catar",
-    "codigo": "QA",
-    "indicativo": "00974"
-  },
-  {
-    "nombre": "Chile",
-    "codigo": "CL",
-    "indicativo": "0056"
-  },
-  {
-    "nombre": "China",
-    "codigo": "CN",
-    "indicativo": "0086"
-  },
-  {
-    "nombre": "Colombia",
-    "codigo": "CO",
-    "indicativo": "0057"
-  },
-  {
-    "nombre": "Corea del Sur",
-    "codigo": "KR",
-    "indicativo": "0082"
-  },
-  {
-    "nombre": "Costa de Marfil",
-    "codigo": "CI",
-    "indicativo": "00225"
-  },
-  {
-    "nombre": "Costa Rica",
-    "codigo": "CR",
-    "indicativo": "00506"
-  },
-  {
-    "nombre": "Cuba",
-    "codigo": "CU",
-    "indicativo": "0053"
-  },
-  {
-    "nombre": "Ecuador",
-    "codigo": "EC",
-    "indicativo": "00593"
-  },
-  {
-    "nombre": "Egipto",
-    "codigo": "EG",
-    "indicativo": "0020"
-  },
-  {
-    "nombre": "Emiratos Árabes Unidos",
-    "codigo": "AE",
-    "indicativo": "00971"
-  },
-  {
-    "nombre": "España",
-    "codigo": "ES",
-    "indicativo": "0034"
-  },
-  {
-    "nombre": "Estados Unidos",
-    "codigo": "US",
-    "indicativo": "001"
-  },
-  {
-    "nombre": "Fiji",
-    "codigo": "FJ",
-    "indicativo": "00679"
-  },
-  {
-    "nombre": "Filipinas",
-    "codigo": "PH",
-    "indicativo": "0063"
-  },
-  {
-    "nombre": "Francia",
-    "codigo": "FR",
-    "indicativo": "0033"
-  },
-  {
-    "nombre": "Ghana",
-    "codigo": "GH",
-    "indicativo": "00233"
-  },
-  {
-    "nombre": "Grecia",
-    "codigo": "GR",
-    "indicativo": "0030"
-  },
-  {
-    "nombre": "India",
-    "codigo": "IN",
-    "indicativo": "0091"
-  },
-  {
-    "nombre": "Indonesia",
-    "codigo": "ID",
-    "indicativo": "0062"
-  },
-  {
-    "nombre": "Irán",
-    "codigo": "IR",
-    "indicativo": "0098"
-  },
-  {
-    "nombre": "Iraq",
-    "codigo": "IQ",
-    "indicativo": "00964"
-  },
-  {
-    "nombre": "Israel",
-    "codigo": "IL",
-    "indicativo": "00972"
-  },
-  {
-    "nombre": "Italia",
-    "codigo": "IT",
-    "indicativo": "0039"
-  },
-  {
-    "nombre": "Japón",
-    "codigo": "JP",
-    "indicativo": "0081"
-  },
-  {
-    "nombre": "Jordania",
-    "codigo": "JO",
-    "indicativo": "00962"
-  },
-  {
-    "nombre": "Kenia",
-    "codigo": "KE",
-    "indicativo": "00254"
-  },
-  {
-    "nombre": "Kuwait",
-    "codigo": "KW",
-    "indicativo": "00965"
-  },
-  {
-    "nombre": "Líbano",
-    "codigo": "LB",
-    "indicativo": "00961"
-  },
-  {
-    "nombre": "Libia",
-    "codigo": "LY",
-    "indicativo": "00218"
-  },
-  {
-    "nombre": "Malasia",
-    "codigo": "MY",
-    "indicativo": "0060"
-  },
-  {
-    "nombre": "Marruecos",
-    "codigo": "MA",
-    "indicativo": "00212"
-  },
-  {
-    "nombre": "México",
-    "codigo": "MX",
-    "indicativo": "0052"
-  },
-  {
-    "nombre": "Nigeria",
-    "codigo": "NG",
-    "indicativo": "00234"
-  },
-  {
-    "nombre": "Noruega",
-    "codigo": "NO",
-    "indicativo": "0047"
-  },
-  {
-    "nombre": "Nueva Zelanda",
-    "codigo": "NZ",
-    "indicativo": "0064"
-  },
-  {
-    "nombre": "Omán",
-    "codigo": "OM",
-    "indicativo": "00968"
-  },
-  {
-    "nombre": "Países Bajos",
-    "codigo": "NL",
-    "indicativo": "0031"
-  },
-  {
-    "nombre": "Pakistán",
-    "codigo": "PK",
-    "indicativo": "0092"
-  },
-  {
-    "nombre": "Panamá",
-    "codigo": "PA",
-    "indicativo": "00507"
-  },
-  {
-    "nombre": "Papúa Nueva Guinea",
-    "codigo": "PG",
-    "indicativo": "00675"
-  },
-  {
-    "nombre": "Perú",
-    "codigo": "PE",
-    "indicativo": "0051"
-  },
-  {
-    "nombre": "Polonia",
-    "codigo": "PL",
-    "indicativo": "0048"
-  },
-  {
-    "nombre": "Portugal",
-    "codigo": "PT",
-    "indicativo": "00351"
-  },
-  {
-    "nombre": "Reino Unido",
-    "codigo": "GB",
-    "indicativo": "0044"
-  },
-  {
-    "nombre": "Rumania",
-    "codigo": "RO",
-    "indicativo": "0040"
-  },
-  {
-    "nombre": "Rusia",
-    "codigo": "RU",
-    "indicativo": "0007"
-  },
-  {
-    "nombre": "Senegal",
-    "codigo": "SN",
-    "indicativo": "00221"
-  },
-  {
-    "nombre": "Singapur",
-    "codigo": "SG",
-    "indicativo": "0065"
-  },
-  {
-    "nombre": "Sudáfrica",
-    "codigo": "ZA",
-    "indicativo": "0027"
-  },
-  {
-    "nombre": "Sudán",
-    "codigo": "SD",
-    "indicativo": "00249"
-  },
-  {
-    "nombre": "Suecia",
-    "codigo": "SE",
-    "indicativo": "0046"
-  },
-  {
-    "nombre": "Tailandia",
-    "codigo": "TH",
-    "indicativo": "0066"
-  },
-  {
-    "nombre": "Tanzania",
-    "codigo": "TZ",
-    "indicativo": "00255"
-  },
-  {
-    "nombre": "Tonga",
-    "codigo": "TO",
-    "indicativo": "00676"
-  },
-  {
-    "nombre": "Túnez",
-    "codigo": "TN",
-    "indicativo": "00216"
-  },
-  {
-    "nombre": "Turquía",
-    "codigo": "TR",
-    "indicativo": "0090"
-  },
-  {
-    "nombre": "Ucrania",
-    "codigo": "UA",
-    "indicativo": "00380"
-  },
-  {
-    "nombre": "Uganda",
-    "codigo": "UG",
-    "indicativo": "00256"
-  },
-  {
-    "nombre": "Uruguay",
-    "codigo": "UY",
-    "indicativo": "00598"
-  },
-  {
-    "nombre": "Venezuela",
-    "codigo": "VE",
-    "indicativo": "0058"
-  },
-  {
-    "nombre": "Vietnam",
-    "codigo": "VN",
-    "indicativo": "0084"
-  },
-  {
-    "nombre": "Yemen",
-    "codigo": "YE",
-    "indicativo": "00967"
-  }
-];
+
+
+  <!-- ############################################################ FIN MODALES PERSONALES ###########################################################################-->
 
 
 
 
 
-//Funciones Genericas
+  <!-- libreria para modales-->
 
-const muestra_esconde=(id)=>{  
-
-  var element = document.getElementById(id);
-    if (element.style.display === "none") {
-        // Si el elemento está oculto, mostrarlo
-        element.style.display = "flex";
-    } else {
-        // Si el elemento está visible, ocultarlo
-        element.style.display = "none";
-    }
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
 
-}
-
-
-  // Función para detectar el código de país basado en la ubicación del usuario
-  function detectarCodigoPais() {
-      // Haces una llamada a un servicio de geolocalización para obtener el país del usuario
-      // Aquí puedes usar una API de geolocalización como GeoJS
-     let codigo
-
-
-
-
-
-
-
-    let  CodigoTelefono=0;
-    
-
-      fetch('https://get.geojs.io/v1/ip/geo.json')
-        .then(response => response.json())
-        .then(data => {
-          // Extraes el código de país de la respuesta
-          const codigoPais = data.country_code;
-
-          // Buscamos en el array el valor del indicativo para ponerlo automaticamente en el indicativo de teléfono
-         
-          for(let i=0; i < codigoPaisTel.length; i++){
-           if(codigoPaisTel[i].codigo==codigoPais){
-            CodigoTelefono=codigoPaisTel[i].indicativo;
-
-           }
-
-          }
-
-
-          // Asignas el código de país al input oculto
-          document.getElementById('telefono').value =CodigoTelefono;
-        })
-        .catch(error => {
-          console.error('Error al detectar el país:', error);
-          // En caso de error, puedes dejar el campo de código de país vacío o mostrar un mensaje de error al usuario
-        });
-    }
-
-    // Llamas a la función para que se ejecute cuando la página cargue
-    window.onload = detectarCodigoPais;
-
-</script>
+<script src="script.js"></script> </script>
 
 
 
 
 </body>
+
 </html>
